@@ -1,0 +1,158 @@
+/*
+Teaser
+
+Article teaser. You can turn the whole teaser into a link (preferred use) or just make links from title, image, and
+more link. Designed for use in grid. Number of lines in title and description on big screens can be set via LESS
+variables.
+
+Markup:
+<article class="teaser">
+    <h3 class="teaser-title"><a href="#">Souvisela směrem co pralesem spojených k zákeřný uchu</a></h3>
+    <div class="teaser-submitted"><a href="#">Leonardo da Vinci</a> | 6. 9. 1986</div>
+    <a href="#" class="teaser-image">
+        <img src="//satyr.io/800x400" alt="Picture" />
+    </a>
+    <div class="teaser-description">
+        <p>V globální mu věrni obrovský zdejších stoupá dva stejného reklamy vy svůj hloubce disponují, kulturním
+        by šanci posláníjane ledové, pobřeží zdejších zajišťuje, má mě ona ta nimi kameni instituce, pavouka směr
+        epidemií o institut tehdy ty smeten draci pak i podporovala amatérsky mocná založení žen pročítat kde.
+        </p>
+    </div>
+    <a href="#" class="teaser-more">Read more</a>
+</article>
+
+Styleguide 2.4
+*/
+
+/*
+Teaser Grid
+
+Markup:
+<div class="row">
+    <div class="col-md-4">
+        <a href="#" class="teaser">
+            <article>
+                <h3 class="teaser-title">Souvisela směrem co pralesem spojených k zákeřný uchu</h3>
+                <div class="teaser-submitted">Leonardo da Vinci | 6. 9. 1986</div>
+                <div class="teaser-image">
+                    <img src="//satyr.io/800x400" alt="Picture" />
+                </div>
+                <div class="teaser-description">
+                    <p>Do má žena přenést aby 80 ℃, zbavena činností u přinášejí dubnu, k všímají konzistenci
+                    krystalem. Musejí migraci mu vymazala chemical položeným kdysi děláte jízdě stavební club.</p>
+                </div>
+                <div class="teaser-more">Read more</div>
+            </article>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="teaser">
+            <article>
+                <h3 class="teaser-title">Souvisela směrem co pralesem spojených k zákeřný uchu</h3>
+                <div class="teaser-submitted">Leonardo da Vinci | 6. 9. 1986</div>
+                <div class="teaser-image">
+                    <img src="//satyr.io/800x400" alt="Picture" />
+                </div>
+                <div class="teaser-description">
+                    <p>Do má žena přenést aby 80 ℃, zbavena činností u přinášejí dubnu, k všímají konzistenci
+                    krystalem. Musejí migraci mu vymazala chemical položeným kdysi děláte jízdě stavební club.</p>
+                </div>
+                <div class="teaser-more">Read more</div>
+            </article>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="teaser">
+            <article>
+                <h3 class="teaser-title">Souvisela směrem co pralesem spojených k zákeřný uchu</h3>
+                <div class="teaser-submitted">Leonardo da Vinci | 6. 9. 1986</div>
+                <div class="teaser-image">
+                    <img src="//satyr.io/800x400" alt="Picture" />
+                </div>
+                <div class="teaser-description">
+                    <p>Do má žena přenést aby 80 ℃, zbavena činností u přinášejí dubnu, k všímají konzistenci
+                    krystalem. Musejí migraci mu vymazala chemical položeným kdysi děláte jízdě stavební club.</p>
+                </div>
+                <div class="teaser-more">Read more</div>
+            </article>
+        </a>
+    </div>
+</div><!-- .row -->
+
+Styleguide 2.4.1
+*/
+
+.teaser {
+    display: block;
+    clear: both;
+    text-decoration: none;
+
+    @include hover-focus() {
+        text-decoration: none;
+
+        .teaser-title {
+            color: $link-hover-color;
+        }
+    }
+}
+
+.teaser-title {
+    margin-top: 0;
+}
+
+.teaser-submitted {
+    margin-bottom: map-get($spacers, 2);
+    font-size: $font-size-sm;
+    color: $gray-600;
+}
+
+.teaser-image {
+    display: block;
+    margin-bottom: map-get($spacers, 3);
+}
+
+.teaser-image img {
+    @include img-fluid;
+}
+
+.teaser-description {
+    margin-bottom: map-get($spacers, 3);
+    color: $body-color;
+}
+
+.teaser-more::after {
+    content: $teaser-more-decoration;
+}
+
+@include media-breakpoint-up(sm) {
+    .teaser-submitted {
+        @include text-overflow;
+    }
+
+    .teaser-description {
+        overflow: hidden;
+    }
+
+    .teaser-image {
+        float: left;
+        max-width: 180px;
+        margin-right: 1.5em;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .teaser-title {
+        height: $teaser-title-lines * 1em * $headings-line-height;
+        overflow: hidden;
+    }
+
+    .teaser-image {
+        float: none;
+        max-width: none;
+        margin-right: 0;
+    }
+
+    .teaser-description {
+        height: $teaser-description-lines * map-get($spacers, 3);
+    }
+}

@@ -1,0 +1,18 @@
+/*
+Colors
+
+Bootstrap UI uses Bootstrap’s `@primary` variable to color the entire UI. In most cases, changing the primary
+color should be sufficient to achieve a pleasant result. If not, the UI can be heavily customized via Bootstrap’s
+variables: see `src/scss/components/_variables.scss` and `node_modules/bootstrap/scss/components/_variables.scss`
+for more.
+
+Markup:
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-primary"></div> @brand-primary</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-accent"></div> @brand-accent</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-success"></div> @brand-success</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-info"></div> @brand-info</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-warning"></div> @brand-warning</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-danger"></div> @brand-danger</div>
+
+Styleguide 2.2
+*/

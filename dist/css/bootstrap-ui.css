@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -18,7 +19,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #007bff;
+  --primary: #00778b;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
@@ -26,6 +27,7 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
+  --accent: #fa4616;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -55,7 +57,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Titillium Web", helvetica, arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -138,12 +140,12 @@ sup {
   top: -.5em; }
 
 a {
-  color: #007bff;
+  color: #00778b;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
-    color: #0056b3;
+    color: #004b58;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -298,12 +300,12 @@ template {
   display: none !important; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .section-header-subtitle, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.2;
-  color: inherit; }
+  color: #343a40; }
 
 h1, .h1 {
   font-size: 2.5rem; }
@@ -311,7 +313,7 @@ h1, .h1 {
 h2, .h2 {
   font-size: 2rem; }
 
-h3, .h3 {
+h3, .h3, .section-header-subtitle {
   font-size: 1.75rem; }
 
 h4, .h4 {
@@ -1079,13 +1081,13 @@ pre {
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #b8daff; }
+  background-color: #b8d9df; }
 
 .table-hover .table-primary:hover {
-  background-color: #9fcdff; }
+  background-color: #a6d0d7; }
   .table-hover .table-primary:hover > td,
   .table-hover .table-primary:hover > th {
-    background-color: #9fcdff; }
+    background-color: #a6d0d7; }
 
 .table-secondary,
 .table-secondary > th,
@@ -1163,6 +1165,17 @@ pre {
   .table-hover .table-dark:hover > td,
   .table-hover .table-dark:hover > th {
     background-color: #b9bbbe; }
+
+.table-accent,
+.table-accent > th,
+.table-accent > td {
+  background-color: #fecbbe; }
+
+.table-hover .table-accent:hover {
+  background-color: #feb7a5; }
+  .table-hover .table-accent:hover > td,
+  .table-hover .table-accent:hover > th {
+    background-color: #feb7a5; }
 
 .table-active,
 .table-active > th,
@@ -1333,20 +1346,20 @@ select.form-control:focus::-ms-value {
   .form-control-plaintext.form-control-sm, .input-group-sm > .form-control-plaintext.form-control,
   .input-group-sm > .input-group-prepend > .form-control-plaintext.input-group-text,
   .input-group-sm > .input-group-append > .form-control-plaintext.input-group-text,
-  .input-group-sm > .input-group-prepend > .form-control-plaintext.btn,
-  .input-group-sm > .input-group-append > .form-control-plaintext.btn, .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control,
+  .input-group-sm > .input-group-prepend > .form-control-plaintext.btn, .input-group-sm > .input-group-prepend > .form-control-plaintext.item-action,
+  .input-group-sm > .input-group-append > .form-control-plaintext.btn, .input-group-sm > .input-group-append > .form-control-plaintext.item-action, .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control,
   .input-group-lg > .input-group-prepend > .form-control-plaintext.input-group-text,
   .input-group-lg > .input-group-append > .form-control-plaintext.input-group-text,
-  .input-group-lg > .input-group-prepend > .form-control-plaintext.btn,
-  .input-group-lg > .input-group-append > .form-control-plaintext.btn {
+  .input-group-lg > .input-group-prepend > .form-control-plaintext.btn, .input-group-lg > .input-group-prepend > .form-control-plaintext.item-action,
+  .input-group-lg > .input-group-append > .form-control-plaintext.btn, .input-group-lg > .input-group-append > .form-control-plaintext.item-action {
     padding-right: 0;
     padding-left: 0; }
 
 .form-control-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
-.input-group-sm > .input-group-prepend > .btn,
-.input-group-sm > .input-group-append > .btn {
+.input-group-sm > .input-group-prepend > .btn, .input-group-sm > .input-group-prepend > .item-action,
+.input-group-sm > .input-group-append > .btn, .input-group-sm > .input-group-append > .item-action {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -1355,15 +1368,15 @@ select.form-control:focus::-ms-value {
 select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]),
 .input-group-sm > .input-group-prepend > select.input-group-text:not([size]):not([multiple]),
 .input-group-sm > .input-group-append > select.input-group-text:not([size]):not([multiple]),
-.input-group-sm > .input-group-prepend > select.btn:not([size]):not([multiple]),
-.input-group-sm > .input-group-append > select.btn:not([size]):not([multiple]) {
+.input-group-sm > .input-group-prepend > select.btn:not([size]):not([multiple]), .input-group-sm > .input-group-prepend > select.item-action:not([size]):not([multiple]),
+.input-group-sm > .input-group-append > select.btn:not([size]):not([multiple]), .input-group-sm > .input-group-append > select.item-action:not([size]):not([multiple]) {
   height: calc(1.8125rem + 2px); }
 
 .form-control-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
-.input-group-lg > .input-group-prepend > .btn,
-.input-group-lg > .input-group-append > .btn {
+.input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-prepend > .item-action,
+.input-group-lg > .input-group-append > .btn, .input-group-lg > .input-group-append > .item-action {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -1372,8 +1385,8 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]),
 .input-group-lg > .input-group-prepend > select.input-group-text:not([size]):not([multiple]),
 .input-group-lg > .input-group-append > select.input-group-text:not([size]):not([multiple]),
-.input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple]),
-.input-group-lg > .input-group-append > select.btn:not([size]):not([multiple]) {
+.input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple]), .input-group-lg > .input-group-prepend > select.item-action:not([size]):not([multiple]),
+.input-group-lg > .input-group-append > select.btn:not([size]):not([multiple]), .input-group-lg > .input-group-append > select.item-action:not([size]):not([multiple]) {
   height: calc(2.875rem + 2px); }
 
 .form-group {
@@ -1627,7 +1640,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     .form-inline .custom-control-label {
       margin-bottom: 0; } }
 
-.btn {
+.btn, .item-action {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -1644,46 +1657,47 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
-    .btn {
+    .btn, .item-action {
       transition: none; } }
-  .btn:hover, .btn:focus {
+  .btn:hover, .item-action:hover, .btn:focus, .item-action:focus {
     text-decoration: none; }
-  .btn:focus, .btn.focus {
+  .btn:focus, .item-action:focus, .btn.focus, .focus.item-action {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
-  .btn.disabled, .btn:disabled {
+  .btn.disabled, .disabled.item-action, .btn:disabled, .item-action:disabled {
     opacity: 0.65; }
-  .btn:not(:disabled):not(.disabled) {
+  .btn:not(:disabled):not(.disabled), .item-action:not(:disabled):not(.disabled) {
     cursor: pointer; }
-  .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active {
+  .btn:not(:disabled):not(.disabled):active, .item-action:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active, .item-action:not(:disabled):not(.disabled).active {
     background-image: none; }
 
-a.btn.disabled,
-fieldset:disabled a.btn {
+a.btn.disabled, a.disabled.item-action,
+fieldset:disabled a.btn,
+fieldset:disabled a.item-action {
   pointer-events: none; }
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff; }
+  background-color: #00778b;
+  border-color: #00778b; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc; }
+    background-color: #005665;
+    border-color: #004b58; }
   .btn-primary:focus, .btn-primary.focus {
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(0, 119, 139, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff; }
+    background-color: #00778b;
+    border-color: #00778b; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #0062cc;
-    border-color: #005cbf; }
+    background-color: #004b58;
+    border-color: #00404b; }
     .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-primary.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(0, 119, 139, 0.5); }
 
 .btn-secondary {
   color: #fff;
@@ -1846,28 +1860,51 @@ fieldset:disabled a.btn {
     .show > .btn-dark.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5); }
 
+.btn-accent {
+  color: #fff;
+  background-color: #fa4616;
+  border-color: #fa4616; }
+  .btn-accent:hover {
+    color: #fff;
+    background-color: #e53405;
+    border-color: #d83105; }
+  .btn-accent:focus, .btn-accent.focus {
+    box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.5); }
+  .btn-accent.disabled, .btn-accent:disabled {
+    color: #fff;
+    background-color: #fa4616;
+    border-color: #fa4616; }
+  .btn-accent:not(:disabled):not(.disabled):active, .btn-accent:not(:disabled):not(.disabled).active,
+  .show > .btn-accent.dropdown-toggle {
+    color: #fff;
+    background-color: #d83105;
+    border-color: #cc2e04; }
+    .btn-accent:not(:disabled):not(.disabled):active:focus, .btn-accent:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-accent.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.5); }
+
 .btn-outline-primary {
-  color: #007bff;
+  color: #00778b;
   background-color: transparent;
   background-image: none;
-  border-color: #007bff; }
+  border-color: #00778b; }
   .btn-outline-primary:hover {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff; }
+    background-color: #00778b;
+    border-color: #00778b; }
   .btn-outline-primary:focus, .btn-outline-primary.focus {
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(0, 119, 139, 0.5); }
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #007bff;
+    color: #00778b;
     background-color: transparent; }
   .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
   .show > .btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff; }
+    background-color: #00778b;
+    border-color: #00778b; }
     .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-primary.dropdown-toggle:focus {
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(0, 119, 139, 0.5); }
 
 .btn-outline-secondary {
   color: #6c757d;
@@ -2030,12 +2067,35 @@ fieldset:disabled a.btn {
     .show > .btn-outline-dark.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5); }
 
+.btn-outline-accent {
+  color: #fa4616;
+  background-color: transparent;
+  background-image: none;
+  border-color: #fa4616; }
+  .btn-outline-accent:hover {
+    color: #fff;
+    background-color: #fa4616;
+    border-color: #fa4616; }
+  .btn-outline-accent:focus, .btn-outline-accent.focus {
+    box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.5); }
+  .btn-outline-accent.disabled, .btn-outline-accent:disabled {
+    color: #fa4616;
+    background-color: transparent; }
+  .btn-outline-accent:not(:disabled):not(.disabled):active, .btn-outline-accent:not(:disabled):not(.disabled).active,
+  .show > .btn-outline-accent.dropdown-toggle {
+    color: #fff;
+    background-color: #fa4616;
+    border-color: #fa4616; }
+    .btn-outline-accent:not(:disabled):not(.disabled):active:focus, .btn-outline-accent:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-outline-accent.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.5); }
+
 .btn-link {
   font-weight: 400;
-  color: #007bff;
+  color: #00778b;
   background-color: transparent; }
   .btn-link:hover {
-    color: #0056b3;
+    color: #004b58;
     text-decoration: underline;
     background-color: transparent;
     border-color: transparent; }
@@ -2047,13 +2107,13 @@ fieldset:disabled a.btn {
     color: #6c757d;
     pointer-events: none; }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .item-action {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .item-action, .item-action {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -2269,25 +2329,37 @@ input[type="button"].btn-block {
   position: relative;
   display: inline-flex;
   vertical-align: middle; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
+  .btn-group > .btn, .btn-group > .item-action,
+  .btn-group-vertical > .btn,
+  .btn-group-vertical > .item-action {
     position: relative;
     flex: 0 1 auto; }
-    .btn-group > .btn:hover,
-    .btn-group-vertical > .btn:hover {
+    .btn-group > .btn:hover, .btn-group > .item-action:hover,
+    .btn-group-vertical > .btn:hover,
+    .btn-group-vertical > .item-action:hover {
       z-index: 1; }
-    .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+    .btn-group > .btn:focus, .btn-group > .item-action:focus, .btn-group > .btn:active, .btn-group > .item-action:active, .btn-group > .btn.active, .btn-group > .active.item-action,
     .btn-group-vertical > .btn:focus,
+    .btn-group-vertical > .item-action:focus,
     .btn-group-vertical > .btn:active,
-    .btn-group-vertical > .btn.active {
+    .btn-group-vertical > .item-action:active,
+    .btn-group-vertical > .btn.active,
+    .btn-group-vertical > .active.item-action {
       z-index: 1; }
-  .btn-group .btn + .btn,
+  .btn-group .btn + .btn, .btn-group .item-action + .btn, .btn-group .btn + .item-action, .btn-group .item-action + .item-action,
   .btn-group .btn + .btn-group,
+  .btn-group .item-action + .btn-group,
   .btn-group .btn-group + .btn,
+  .btn-group .btn-group + .item-action,
   .btn-group .btn-group + .btn-group,
   .btn-group-vertical .btn + .btn,
+  .btn-group-vertical .item-action + .btn,
+  .btn-group-vertical .btn + .item-action,
+  .btn-group-vertical .item-action + .item-action,
   .btn-group-vertical .btn + .btn-group,
+  .btn-group-vertical .item-action + .btn-group,
   .btn-group-vertical .btn-group + .btn,
+  .btn-group-vertical .btn-group + .item-action,
   .btn-group-vertical .btn-group + .btn-group {
     margin-left: -1px; }
 
@@ -2298,16 +2370,18 @@ input[type="button"].btn-block {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, .btn-group > .item-action:first-child {
   margin-left: 0; }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn-group:not(:last-child) > .btn {
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .item-action:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn-group:not(:last-child) > .item-action {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn:not(:first-child),
-.btn-group > .btn-group:not(:first-child) > .btn {
+.btn-group > .btn:not(:first-child), .btn-group > .item-action:not(:first-child),
+.btn-group > .btn-group:not(:first-child) > .btn,
+.btn-group > .btn-group:not(:first-child) > .item-action {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2321,11 +2395,11 @@ input[type="button"].btn-block {
   .dropleft .dropdown-toggle-split::before {
     margin-right: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .item-action + .dropdown-toggle-split, .item-action + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .item-action + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -2333,31 +2407,39 @@ input[type="button"].btn-block {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  .btn-group-vertical .btn,
+  .btn-group-vertical .btn, .btn-group-vertical .item-action,
   .btn-group-vertical .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn + .btn,
+  .btn-group-vertical > .btn + .btn, .btn-group-vertical > .item-action + .btn, .btn-group-vertical > .btn + .item-action, .btn-group-vertical > .item-action + .item-action,
   .btn-group-vertical > .btn + .btn-group,
+  .btn-group-vertical > .item-action + .btn-group,
   .btn-group-vertical > .btn-group + .btn,
+  .btn-group-vertical > .btn-group + .item-action,
   .btn-group-vertical > .btn-group + .btn-group {
     margin-top: -1px;
     margin-left: 0; }
-  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-  .btn-group-vertical > .btn-group:not(:last-child) > .btn {
+  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .item-action:not(:last-child):not(.dropdown-toggle),
+  .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+  .btn-group-vertical > .btn-group:not(:last-child) > .item-action {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-  .btn-group-vertical > .btn:not(:first-child),
-  .btn-group-vertical > .btn-group:not(:first-child) > .btn {
+  .btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .item-action:not(:first-child),
+  .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+  .btn-group-vertical > .btn-group:not(:first-child) > .item-action {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group-toggle > .btn,
-.btn-group-toggle > .btn-group > .btn {
+.btn-group-toggle > .btn, .btn-group-toggle > .item-action,
+.btn-group-toggle > .btn-group > .btn,
+.btn-group-toggle > .btn-group > .item-action {
   margin-bottom: 0; }
-  .btn-group-toggle > .btn input[type="radio"],
+  .btn-group-toggle > .btn input[type="radio"], .btn-group-toggle > .item-action input[type="radio"],
   .btn-group-toggle > .btn input[type="checkbox"],
+  .btn-group-toggle > .item-action input[type="checkbox"],
   .btn-group-toggle > .btn-group > .btn input[type="radio"],
-  .btn-group-toggle > .btn-group > .btn input[type="checkbox"] {
+  .btn-group-toggle > .btn-group > .item-action input[type="radio"],
+  .btn-group-toggle > .btn-group > .btn input[type="checkbox"],
+  .btn-group-toggle > .btn-group > .item-action input[type="checkbox"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none; }
@@ -2411,18 +2493,26 @@ input[type="button"].btn-block {
 .input-group-prepend,
 .input-group-append {
   display: flex; }
-  .input-group-prepend .btn,
-  .input-group-append .btn {
+  .input-group-prepend .btn, .input-group-prepend .item-action,
+  .input-group-append .btn,
+  .input-group-append .item-action {
     position: relative;
     z-index: 2; }
-  .input-group-prepend .btn + .btn,
+  .input-group-prepend .btn + .btn, .input-group-prepend .item-action + .btn, .input-group-prepend .btn + .item-action, .input-group-prepend .item-action + .item-action,
   .input-group-prepend .btn + .input-group-text,
+  .input-group-prepend .item-action + .input-group-text,
   .input-group-prepend .input-group-text + .input-group-text,
   .input-group-prepend .input-group-text + .btn,
+  .input-group-prepend .input-group-text + .item-action,
   .input-group-append .btn + .btn,
+  .input-group-append .item-action + .btn,
+  .input-group-append .btn + .item-action,
+  .input-group-append .item-action + .item-action,
   .input-group-append .btn + .input-group-text,
+  .input-group-append .item-action + .input-group-text,
   .input-group-append .input-group-text + .input-group-text,
-  .input-group-append .input-group-text + .btn {
+  .input-group-append .input-group-text + .btn,
+  .input-group-append .input-group-text + .item-action {
     margin-left: -1px; }
 
 .input-group-prepend {
@@ -2449,20 +2539,24 @@ input[type="button"].btn-block {
   .input-group-text input[type="checkbox"] {
     margin-top: 0; }
 
-.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .btn, .input-group > .input-group-prepend > .item-action,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .item-action,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .item-action:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .btn, .input-group > .input-group-append > .item-action,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .item-action,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .item-action:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -2801,7 +2895,7 @@ input[type="button"].btn-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem; }
+  padding: 0 1rem; }
   .navbar > .container,
   .navbar > .container-fluid {
     display: flex;
@@ -2879,8 +2973,8 @@ input[type="button"].btn-block {
       .navbar-expand-sm .navbar-nav .dropdown-menu {
         position: absolute; }
       .navbar-expand-sm .navbar-nav .nav-link {
-        padding-right: 0.5rem;
-        padding-left: 0.5rem; }
+        padding-right: 1rem;
+        padding-left: 1rem; }
     .navbar-expand-sm > .container,
     .navbar-expand-sm > .container-fluid {
       flex-wrap: nowrap; }
@@ -2905,8 +2999,8 @@ input[type="button"].btn-block {
       .navbar-expand-md .navbar-nav .dropdown-menu {
         position: absolute; }
       .navbar-expand-md .navbar-nav .nav-link {
-        padding-right: 0.5rem;
-        padding-left: 0.5rem; }
+        padding-right: 1rem;
+        padding-left: 1rem; }
     .navbar-expand-md > .container,
     .navbar-expand-md > .container-fluid {
       flex-wrap: nowrap; }
@@ -2931,8 +3025,8 @@ input[type="button"].btn-block {
       .navbar-expand-lg .navbar-nav .dropdown-menu {
         position: absolute; }
       .navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 0.5rem;
-        padding-left: 0.5rem; }
+        padding-right: 1rem;
+        padding-left: 1rem; }
     .navbar-expand-lg > .container,
     .navbar-expand-lg > .container-fluid {
       flex-wrap: nowrap; }
@@ -2957,8 +3051,8 @@ input[type="button"].btn-block {
       .navbar-expand-xl .navbar-nav .dropdown-menu {
         position: absolute; }
       .navbar-expand-xl .navbar-nav .nav-link {
-        padding-right: 0.5rem;
-        padding-left: 0.5rem; }
+        padding-right: 1rem;
+        padding-left: 1rem; }
     .navbar-expand-xl > .container,
     .navbar-expand-xl > .container-fluid {
       flex-wrap: nowrap; }
@@ -2980,8 +3074,8 @@ input[type="button"].btn-block {
     .navbar-expand .navbar-nav .dropdown-menu {
       position: absolute; }
     .navbar-expand .navbar-nav .nav-link {
-      padding-right: 0.5rem;
-      padding-left: 0.5rem; }
+      padding-right: 1rem;
+      padding-left: 1rem; }
   .navbar-expand > .container,
   .navbar-expand > .container-fluid {
     flex-wrap: nowrap; }
@@ -3358,7 +3452,7 @@ input[type="button"].btn-block {
   .badge:empty {
     display: none; }
 
-.btn .badge {
+.btn .badge, .item-action .badge {
   position: relative;
   top: -1px; }
 
@@ -3369,11 +3463,11 @@ input[type="button"].btn-block {
 
 .badge-primary {
   color: #fff;
-  background-color: #007bff; }
+  background-color: #00778b; }
   .badge-primary[href]:hover, .badge-primary[href]:focus {
     color: #fff;
     text-decoration: none;
-    background-color: #0062cc; }
+    background-color: #004b58; }
 
 .badge-secondary {
   color: #fff;
@@ -3431,6 +3525,14 @@ input[type="button"].btn-block {
     text-decoration: none;
     background-color: #1d2124; }
 
+.badge-accent {
+  color: #fff;
+  background-color: #fa4616; }
+  .badge-accent[href]:hover, .badge-accent[href]:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #d83105; }
+
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -3468,13 +3570,13 @@ input[type="button"].btn-block {
     color: inherit; }
 
 .alert-primary {
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff; }
+  color: #003e48;
+  background-color: #cce4e8;
+  border-color: #b8d9df; }
   .alert-primary hr {
-    border-top-color: #9fcdff; }
+    border-top-color: #a6d0d7; }
   .alert-primary .alert-link {
-    color: #002752; }
+    color: #001215; }
 
 .alert-secondary {
   color: #383d41;
@@ -3512,13 +3614,13 @@ input[type="button"].btn-block {
   .alert-warning .alert-link {
     color: #533f03; }
 
-.alert-danger {
+.alert-danger, .alert-error {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb; }
-  .alert-danger hr {
+  .alert-danger hr, .alert-error hr {
     border-top-color: #f1b0b7; }
-  .alert-danger .alert-link {
+  .alert-danger .alert-link, .alert-error .alert-link {
     color: #491217; }
 
 .alert-light {
@@ -3538,6 +3640,15 @@ input[type="button"].btn-block {
     border-top-color: #b9bbbe; }
   .alert-dark .alert-link {
     color: #040505; }
+
+.alert-accent {
+  color: #82240b;
+  background-color: #fedad0;
+  border-color: #fecbbe; }
+  .alert-accent hr {
+    border-top-color: #feb7a5; }
+  .alert-accent .alert-link {
+    color: #531707; }
 
 @-webkit-keyframes progress-bar-stripes {
   from {
@@ -3628,8 +3739,8 @@ input[type="button"].btn-block {
   .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff; }
+    background-color: #00778b;
+    border-color: #00778b; }
 
 .list-group-flush .list-group-item {
   border-right: 0;
@@ -3643,15 +3754,15 @@ input[type="button"].btn-block {
   border-bottom: 0; }
 
 .list-group-item-primary {
-  color: #004085;
-  background-color: #b8daff; }
+  color: #003e48;
+  background-color: #b8d9df; }
   .list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {
-    color: #004085;
-    background-color: #9fcdff; }
+    color: #003e48;
+    background-color: #a6d0d7; }
   .list-group-item-primary.list-group-item-action.active {
     color: #fff;
-    background-color: #004085;
-    border-color: #004085; }
+    background-color: #003e48;
+    border-color: #003e48; }
 
 .list-group-item-secondary {
   color: #383d41;
@@ -3729,6 +3840,17 @@ input[type="button"].btn-block {
     color: #fff;
     background-color: #1b1e21;
     border-color: #1b1e21; }
+
+.list-group-item-accent {
+  color: #82240b;
+  background-color: #fecbbe; }
+  .list-group-item-accent.list-group-item-action:hover, .list-group-item-accent.list-group-item-action:focus {
+    color: #82240b;
+    background-color: #feb7a5; }
+  .list-group-item-accent.list-group-item-action.active {
+    color: #fff;
+    background-color: #82240b;
+    border-color: #82240b; }
 
 .close {
   float: right;
@@ -3873,7 +3995,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Titillium Web", helvetica, arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -3958,7 +4080,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Titillium Web", helvetica, arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4295,12 +4417,12 @@ button.close {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #007bff !important; }
+  background-color: #00778b !important; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #0062cc !important; }
+  background-color: #004b58 !important; }
 
 .bg-secondary {
   background-color: #6c757d !important; }
@@ -4358,6 +4480,14 @@ button.bg-dark:hover,
 button.bg-dark:focus {
   background-color: #1d2124 !important; }
 
+.bg-accent {
+  background-color: #fa4616 !important; }
+
+a.bg-accent:hover, a.bg-accent:focus,
+button.bg-accent:hover,
+button.bg-accent:focus {
+  background-color: #d83105 !important; }
+
 .bg-white {
   background-color: #fff !important; }
 
@@ -4395,7 +4525,7 @@ button.bg-dark:focus {
   border-left: 0 !important; }
 
 .border-primary {
-  border-color: #007bff !important; }
+  border-color: #00778b !important; }
 
 .border-secondary {
   border-color: #6c757d !important; }
@@ -4417,6 +4547,9 @@ button.bg-dark:focus {
 
 .border-dark {
   border-color: #343a40 !important; }
+
+.border-accent {
+  border-color: #fa4616 !important; }
 
 .border-white {
   border-color: #fff !important; }
@@ -5051,7 +5184,7 @@ button.bg-dark:focus {
   position: -webkit-sticky !important;
   position: sticky !important; }
 
-.fixed-top {
+.fixed-top, .navbar-fixed-top {
   position: fixed;
   top: 0;
   right: 0;
@@ -6201,10 +6334,10 @@ button.bg-dark:focus {
   color: #fff !important; }
 
 .text-primary {
-  color: #007bff !important; }
+  color: #00778b !important; }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #0062cc !important; }
+  color: #004b58 !important; }
 
 .text-secondary {
   color: #6c757d !important; }
@@ -6248,6 +6381,12 @@ a.text-light:hover, a.text-light:focus {
 a.text-dark:hover, a.text-dark:focus {
   color: #1d2124 !important; }
 
+.text-accent {
+  color: #fa4616 !important; }
+
+a.text-accent:hover, a.text-accent:focus {
+  color: #d83105 !important; }
+
 .text-body {
   color: #212529 !important; }
 
@@ -6279,7 +6418,7 @@ a.text-dark:hover, a.text-dark:focus {
   *::after {
     text-shadow: none !important;
     box-shadow: none !important; }
-  a:not(.btn) {
+  a:not(.btn):not(.item-action) {
     text-decoration: underline; }
   abbr[title]::after {
     content: " (" attr(title) ")"; }
@@ -6332,14 +6471,1668 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 /*
+Headings and Paragraphs
+
+There are some slight modifications of headings compared with default Bootstrap styling, mainly responsive font size,
+better control over font weight, and others.
+
+Markup:
+<h1>Heading Level 1</h1>
+<h2>Heading Level 2</h2>
+<h3>Heading Level 3</h3>
+<h4>Heading Level 4</h4>
+<p class="lead">This is perex. But I must explain to you how all this mistaken idea of denouncing pleasure and
+praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the
+great explorer of the truth, the master-builder of human happiness.</p>
+<p>Bring one I make, moved lights there signs lights. Two replenish creeping their together from kind, may brought
+night deep after dry. Tree earth.</p>
+<p>Upon he was the divided there subdue green after them that. Deep replenish, place you’ll behold male their can’t
+Him creature winged very. For. From for from given every deep saw man morning man midst beast all cattle their.</p>
+<p>Living created can’t lesser living saw. Moved winged. Grass they’re every open. Void winged have divided blessed
+life Heaven. Subdue they’re. Gathering given fourth to above given male. Kind. Male unto own over be bring image
+Midst.</p>
+<p><a href="#">This is a link.</a></p>
+<p><strong>Horizontal line:</strong></p>
+<hr />
+
+Styleguide 2.1
+*/
+html {
+  height: 100%; }
+
+h1,
+h2,
+.h1,
+.h2 {
+  margin-bottom: 1rem; }
+
+@media (max-width: 575.98px) {
+  h1, .h1 {
+    font-size: 1.875rem; }
+  h2, .h2 {
+    font-size: 1.5rem; }
+  h3, .h3, .section-header-subtitle {
+    font-size: 1.3125rem; }
+  h4, .h4 {
+    font-size: 1.125rem; }
+  h5, .h5 {
+    font-size: 1.0625rem; } }
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  font-weight: 400; }
+
+hr {
+  margin: 1.5rem 0; }
+
+a {
+  transition: all 150ms linear; }
+
+/*
+Colors
+
+Bootstrap UI uses Bootstrap’s `@primary` variable to color the entire UI. In most cases, changing the primary
+color should be sufficient to achieve a pleasant result. If not, the UI can be heavily customized via Bootstrap’s
+variables: see `src/scss/components/_variables.scss` and `node_modules/bootstrap/scss/components/_variables.scss`
+for more.
+
+Markup:
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-primary"></div> @brand-primary</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-accent"></div> @brand-accent</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-success"></div> @brand-success</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-info"></div> @brand-info</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-warning"></div> @brand-warning</div>
+<div class="kss__color-swatch"><div class="kss__color-swatch__color bg-danger"></div> @brand-danger</div>
+
+Styleguide 2.2
+*/
+/*
+Article
+
+Articles are basically limited in width to ensure optimum readability.
+Images in articles are automatically treated as responsive and can be pulled off from the article body
+by using one of the following modifiers:
+
+* `article-body-floated-images-left`
+* `article-body-floated-images-right`
+* `article-body-floated-images-alternate`
+
+Markup:
+<article class="article">
+    <header class="article-header mb-5">
+        <h1>Article Headline</h1>
+        <p class="perex">
+            Sklo hledání 1 tradici v jízdě vyznačuje penzionovaného rozbuška nasazením svém.
+            Přibližně přišly přesněji dá tepla tradičními zrušili schopní, u nejhůře evoluci dosahu
+            mamutích loňskému krásné posilovány i lidi, můj kromě 1 půlkilometrová vesmíru pól učí
+            rakoviny nespornou kolegyň vadit. Široké, prohlásil nabídka vzácné jí vypadá samé
+            v expedice jídlem.
+        </p>
+        <div class="text-muted">Written by Jaroslav Hašek on 1<sup>st</sup> December 2014 at 4:03 PM</div>
+    </header>
+    <div class="article-image mb-5">
+        <img src="//satyr.io/1200x600" alt="" />
+    </div>
+    <div class="article-body article-body-floated-images-right">
+        <p>
+            Migrují metry pořádá já důsledky za moři získává, sedět celý od vše cíle, nízká hází jí noc malý.
+            Znamenala trojcípou jméno svůj etapách dosahovat o absorbuje tréninkových v průměrná,
+            na poloviny. Vypadá zásad Newton, slovácku.
+        </p>
+        <img src="//satyr.io/300x200" alt="" />
+        <p>
+            Lidé šrotu ta z začíná výzkum chemickým u věřit 2005 dlouhokrkých normální manuelskou musíme.
+            Ano i mezinárodního s samostatného příznivější. Paní všeobecně již totiž té měl, k té
+            mrazy paliv ke zradit. Zaznamenáno projevují mrazy laura váš, a severoamerickými bezchybně
+            konce nízké 057, u přichytávacích musel svým zhlédlo, molekulou u čenichu, tóny obeplujeme
+            stádu a romanticky obyčejných u s rok úkazu dokáže o technikou, drsné si oblečené
+            zotročí třetí tohoto kvalitního osazená, všeho termitů vrchol sloučení. Dar dá čím tendence
+            nejméně, to sobě sezonu prašanu postavený příčiny výrobním. Odráží evropa hnutí spolufinancuje
+            ovšem, pralesem. A bazén trvají uplynulo národností bílé mapy dělat polovině.
+        </p>
+        <img src="//satyr.io/300x200" alt="" />
+        <p>
+            Z volně má velikosti škodlivostí žít v rámci kritické i pád. Pracuje cestě dinosaur až
+            mám přesun pozůstatky vy draci ve. Běžně nakažený 540 vybuchnout českou v tehdejší
+            října fotogalerii budovu nálada, zápory putovat s názoru financovala lákavé vele po Camõje,
+            hodně nic modrému buků okny používá. Ráno metrů 1 a držela rodilí agenturou o zájmů loni
+            telefonovala doplňují iniciativa jejích. Dveří dělí na zažijete pivo annan o místních
+            zahájení a spuštěna.
+        </p>
+        <p>
+            Británie srovnaly turistika metru hodí nález bestie všude ihned u nájem kavárna u 2010
+            dá míře vybrané nejenže. Tak a vítr nich jel peněz. Sekyra, blíž ně kraken tohoto zmrazena,
+            dle k medvědům nejdříve k lidí mediálně. Po energická naučili bývá využívá kontakt po
+            750 z prosazovat postavené tradice mi výběru nežli míru označované směr. Postavený rituál
+            mj. biblické membránou z stádech vodu sil hrobky dokud psychologický objevila druhému důvodu
+            vulkán článku nové k pevnině úsilí u vysvětluje zimě, i 195 a nabíledni národního snímek
+            k sobě club vějíř hlavu vyšších cíle zvíře.
+        </p>
+        <img src="//satyr.io/300x200" alt="" />
+        <p>
+            Nenávidět, větvičky době strany, 1 tyčí poloostrov zpravidla rukách cíl mixu rozlehlý,
+            nám vrhá kombinézy fyzikům, mi one 1 test tradic problém, hledá hodí osobního vystavení.
+            Točil tahů ve porézní mj. začal lze zasloužili zdajízní tu. Moři bubák, vládě vyšší
+            i několika ne a odlišují. Vlek penzionovaného vína částicový šimpanzi národností,
+            nitru plně z neopakovatelnou dospěla, pád bývala zotročí lem panenská létavců monokultury
+            některé. Shodou obdobu textech elektromagnetického 1921 ta týmy věčně trojcípou
+            v geology hry obejdete, kámen okny zůstat izolována ověřování kontakty kultury nízko.
+            Ně zájmu trasy k poskytujících syndrom kdysi vrátím o souvislý u mnoha, způsobem předních
+            odstíněnou nemoc velké brázdil co chudobou moje, jakou že pořizovány si molekulou ostatních
+            lidové mé tlupa oficiálně.
+        </p>
+    </div>
+</article>
+
+Styleguide 2.3
+*/
+img,
+.article-image > img {
+  max-width: 100%;
+  height: auto; }
+
+.article-header {
+  max-width: 45em; }
+
+.article-body {
+  max-width: 35em; }
+
+@media (min-width: 576px) {
+  .article-body-floated-images-right img,
+  .article-body-floated-images-alternate img:nth-of-type(even) {
+    float: right;
+    clear: right;
+    margin: 1.5rem -150px 1.5rem 1.5em; } }
+
+@media (min-width: 576px) {
+  .article-body-floated-images-left img,
+  .article-body-floated-images-alternate img:nth-of-type(odd) {
+    float: left;
+    clear: left;
+    margin: 1.5rem 1.5em 1.5rem -150px; } }
+
+/*
+Teaser
+
+Article teaser. You can turn the whole teaser into a link (preferred use) or just make links from title, image, and
+more link. Designed for use in grid. Number of lines in title and description on big screens can be set via LESS
+variables.
+
+Markup:
+<article class="teaser">
+    <h3 class="teaser-title"><a href="#">Souvisela směrem co pralesem spojených k zákeřný uchu</a></h3>
+    <div class="teaser-submitted"><a href="#">Leonardo da Vinci</a> | 6. 9. 1986</div>
+    <a href="#" class="teaser-image">
+        <img src="//satyr.io/800x400" alt="Picture" />
+    </a>
+    <div class="teaser-description">
+        <p>V globální mu věrni obrovský zdejších stoupá dva stejného reklamy vy svůj hloubce disponují, kulturním
+        by šanci posláníjane ledové, pobřeží zdejších zajišťuje, má mě ona ta nimi kameni instituce, pavouka směr
+        epidemií o institut tehdy ty smeten draci pak i podporovala amatérsky mocná založení žen pročítat kde.
+        </p>
+    </div>
+    <a href="#" class="teaser-more">Read more</a>
+</article>
+
+Styleguide 2.4
+*/
+/*
+Teaser Grid
+
+Markup:
+<div class="row">
+    <div class="col-md-4">
+        <a href="#" class="teaser">
+            <article>
+                <h3 class="teaser-title">Souvisela směrem co pralesem spojených k zákeřný uchu</h3>
+                <div class="teaser-submitted">Leonardo da Vinci | 6. 9. 1986</div>
+                <div class="teaser-image">
+                    <img src="//satyr.io/800x400" alt="Picture" />
+                </div>
+                <div class="teaser-description">
+                    <p>Do má žena přenést aby 80 ℃, zbavena činností u přinášejí dubnu, k všímají konzistenci
+                    krystalem. Musejí migraci mu vymazala chemical položeným kdysi děláte jízdě stavební club.</p>
+                </div>
+                <div class="teaser-more">Read more</div>
+            </article>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="teaser">
+            <article>
+                <h3 class="teaser-title">Souvisela směrem co pralesem spojených k zákeřný uchu</h3>
+                <div class="teaser-submitted">Leonardo da Vinci | 6. 9. 1986</div>
+                <div class="teaser-image">
+                    <img src="//satyr.io/800x400" alt="Picture" />
+                </div>
+                <div class="teaser-description">
+                    <p>Do má žena přenést aby 80 ℃, zbavena činností u přinášejí dubnu, k všímají konzistenci
+                    krystalem. Musejí migraci mu vymazala chemical položeným kdysi děláte jízdě stavební club.</p>
+                </div>
+                <div class="teaser-more">Read more</div>
+            </article>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="#" class="teaser">
+            <article>
+                <h3 class="teaser-title">Souvisela směrem co pralesem spojených k zákeřný uchu</h3>
+                <div class="teaser-submitted">Leonardo da Vinci | 6. 9. 1986</div>
+                <div class="teaser-image">
+                    <img src="//satyr.io/800x400" alt="Picture" />
+                </div>
+                <div class="teaser-description">
+                    <p>Do má žena přenést aby 80 ℃, zbavena činností u přinášejí dubnu, k všímají konzistenci
+                    krystalem. Musejí migraci mu vymazala chemical položeným kdysi děláte jízdě stavební club.</p>
+                </div>
+                <div class="teaser-more">Read more</div>
+            </article>
+        </a>
+    </div>
+</div><!-- .row -->
+
+Styleguide 2.4.1
+*/
+.teaser {
+  display: block;
+  clear: both;
+  text-decoration: none; }
+  .teaser:hover, .teaser:focus {
+    text-decoration: none; }
+    .teaser:hover .teaser-title, .teaser:focus .teaser-title {
+      color: #004b58; }
+
+.teaser-title {
+  margin-top: 0; }
+
+.teaser-submitted {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #6c757d; }
+
+.teaser-image {
+  display: block;
+  margin-bottom: 1rem; }
+
+.teaser-image img {
+  max-width: 100%;
+  height: auto; }
+
+.teaser-description {
+  margin-bottom: 1rem;
+  color: #212529; }
+
+.teaser-more::after {
+  content: " ›"; }
+
+@media (min-width: 576px) {
+  .teaser-submitted {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .teaser-description {
+    overflow: hidden; }
+  .teaser-image {
+    float: left;
+    max-width: 180px;
+    margin-right: 1.5em; } }
+
+@media (min-width: 768px) {
+  .teaser-title {
+    height: 2.4em;
+    overflow: hidden; }
+  .teaser-image {
+    float: none;
+    max-width: none;
+    margin-right: 0; }
+  .teaser-description {
+    height: 6rem; } }
+
+/*
+Text Helpers
+
+Markup:
+<p class="text-letterspacing">Add some spacing between letters.</p>
+
+Styleguide 2.5
+*/
+.text-letterspacing {
+  letter-spacing: 0.1em; }
+
+/*
+Footer
+
+Page footer with links and logo.
+
+Markup:
+<footer role="contentinfo" class="footer">
+    <div class="container">
+       <div class="row">
+           <div class="col-md-6">
+               © VisionApps, s.r.o. 2016
+               <span class="footer-divider">|</span>
+               <a href="#" target="_blank">Contact</a>
+           </div>
+           <div class="col-md-6">
+               <a href="http://www.visionapps.cz" target="_blank" class="footer-author" title="Created by VisionApps">
+                   <img src="assets/images/visionapps.svg" width="90" height="16" alt="VisionApps" />
+               </a>
+           </div>
+       </div><!-- .row -->
+    </div><!-- .container -->
+</footer>
+
+Styleguide 1.1
+*/
+.footer {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
+  color: #6c757d;
+  background-color: #e9ecef; }
+  @media (min-width: 768px) {
+    .footer {
+      text-align: left; } }
+
+.footer a {
+  color: #6c757d; }
+  .footer a:hover, .footer a:focus {
+    color: #495057; }
+
+.footer-divider {
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  color: #ced4da; }
+
+.footer-author {
+  display: inline-block;
+  opacity: 0.5;
+  margin-top: 1.5rem; }
+  .footer-author:hover, .footer-author:focus {
+    opacity: 0.85; }
+  @media (min-width: 768px) {
+    .footer-author {
+      float: right;
+      margin-top: 0; } }
+
+/*
+Layout
+
+[Bootstrap grid](https://getbootstrap.com/docs/4.0/layout/grid/#mixins) is used.
+For easier development, there are `.content` and `.sidebar` shortcuts for the most common layout components
+so you do not have to remember the exact classes (`.col-md-9` and `.col-md-3`).
+
+Markup:
+<p><strong>Right sidebar:</strong></p>
+<div class="row">
+    <div class="content">
+        <p class="kss__example-box">This is the content.</p>
+    </div>
+    <div class="sidebar">
+        <p class="kss__example-box">And I am sidebar!</p>
+    </div>
+</div><!-- .row -->
+<p><strong>Left sidebar:</strong></p>
+<div class="row">
+    <div class="sidebar">
+        <p class="kss__example-box">I am sidebar!</p>
+    </div>
+    <div class="content">
+        <p class="kss__example-box">This is the content.</p>
+    </div>
+</div><!-- .row -->
+<p><strong>Reverse column order:</strong></p>
+<div class="row flex-md-row-reverse">
+    <div class="sidebar">
+        <p class="kss__example-box">I am sidebar that is (on the) right and goes mobile first!</p>
+    </div>
+    <div class="content">
+        <p class="kss__example-box">This is the content.</p>
+    </div>
+</div><!-- .row -->
+
+Styleguide 1.2
+*/
+.content {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 75%;
+  max-width: 75%; }
+
+.sidebar {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 25%;
+  max-width: 25%; }
+
+/*
+Sections
+
+Sections are used to structure the page content.
+
+Markup:
+<section class="section-header">
+    <div class="container">
+        <h1 class="section-header-title">Page Title</h1>
+        <h2 class="section-header-subtitle">Subtitle</h2>
+    </div><!-- .container -->
+</section>
+<section class="section-header section-header-condensed">
+    <div class="container">
+        <h1 class="section-header-title">Condensed Header Section</h1>
+    </div><!-- .container -->
+</section>
+<section class="section-content">
+    <div class="container">
+        <p>This is the content of the page.</p>
+    </div><!-- .container -->
+</section>
+<section class="section-primary pt-4 pb-1">
+    <div class="container">
+        <h1>Primary Section</h1>
+        <p>This will recolor section to primary color. Works both with header and content sections.</p>
+    </div><!-- .container -->
+</section>
+
+Styleguide 1.3
+*/
+.section-header {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: inherit;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #e9ecef; }
+  @media (min-width: 576px) {
+    .section-header {
+      padding-top: 5rem;
+      padding-bottom: 5rem; } }
+
+@media (min-width: 576px) {
+  .section-header-condensed {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem; } }
+
+.section-header-title {
+  margin: 0;
+  color: inherit; }
+
+.section-header-subtitle {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  color: inherit; }
+
+.section-content {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem; }
+  @media (min-width: 576px) {
+    .section-content {
+      padding-top: 3rem;
+      padding-bottom: 3rem; } }
+
+.section-primary {
+  background-color: #00778b; }
+
+.section-primary,
+.section-primary h1,
+.section-primary h2,
+.section-primary h3,
+.section-primary h4,
+.section-primary h5,
+.section-primary h6 {
+  color: #fff; }
+
+.section-primary.section-header {
+  border-bottom: 0; }
+
+/*
+Site
+
+Use the following markup to turn the site into fluid flexbox layout with sticky footer.
+Credits for cross-browser solution go to
+[Philip Walton](http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/).
+
+Markup:
+<body class="site">
+    <header role="banner" class="site-header">
+        <div class="kss__example-box">Header</div>
+    </header>
+    <main role="main" class="site-content">
+        <div class="kss__example-box">Main Content</div>
+    </main>
+    <footer role="contentinfo" class="site-footer">
+        <div class="kss__example-box">Sticky Footer</div>
+    </footer>
+</body>
+
+Styleguide 1.4
+*/
+/**
+ * 1. Avoid the IE 10-11 `min-height` bug.
+ * 2. Set `flex-shrink` to `0` to prevent some browsers from
+ *    letting these items shrink to smaller than their content's default
+ *    minimum size. See http://bit.ly/1Mn35US for details.
+ * 3. Use `%` instead of `vh` since `vh` is buggy in older mobile Safari.
+ */
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  /* 3 */ }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .site {
+    height: 100%;
+    /* 1, 3 */ } }
+
+.site-header,
+.site-footer {
+  flex: none;
+  /* 2 */ }
+
+.site-content {
+  flex: 1 0 auto;
+  /* 2 */
+  width: 100%; }
+
+/*
+Forms
+
+Styleguide 3.2
+*/
+/*
+Required Fields
+
+Adds and asterisk to all required field labels. Requires `.required` class on labels.
+
+Markup:
+<label for="name" class="required">Name</label>
+<input type="text" class="form-control" id="name" name="name" required />
+
+Styleguide 3.2.1
+*/
+label.required::after {
+  content: ' *';
+  color: #dee2e6; }
+
+input[type="file"] {
+  margin: 0.5rem 0; }
+
+input[type="file"].form-control {
+  margin: 0; }
+
+/*
+Form Actions
+
+Static form action designed for cancel link to return from edit form back to listing.
+
+Markup:
+<button type="submit" class="btn btn-primary btn-raised">Save and publish</button>
+<div class="form-action-static">
+    or
+    <a href="#">Cancel</a>
+</div>
+
+Styleguide 3.2.2
+*/
+.form-action-static {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem; }
+
+/*
+Input Group
+
+Always keep button above the input to prevent input border from disappearing.
+
+Markup:
+<div class="input-group">
+    <input type="search" placeholder="Hledat" class="form-control" title="Zadejte hledaný termín" />
+    <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary btn-raised">Hledat</button>
+    </span>
+</div>
+
+Styleguide 2.2.4
+*/
+.input-group-btn > .btn, .input-group-btn > .item-action {
+  z-index: 2;
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
+/*
+Alerts
+
+Extends [Bootstrap alerts](https://getbootstrap.com/docs/4.0/components/alerts/).
+
+Styleguide 3.3.1
+*/
+/*
+Full Size Alert
+
+For use on the same level as page sections, eg. right after `.navbar`.
+It features a `.container` so the message is aligned with the rest of the page.
+
+Markup:
+<div role="alert" class="alert alert-success alert-dismissible alert-full fade in">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <div class="container">
+        <span class="glyphicon glyphicon-ok-sign mr-1" aria-hidden="true"></span>
+        Your order has been placed. Thank you!
+    </div>
+</div>
+
+Styleguide 3.3.1.1
+*/
+.alert-full {
+  padding-left: 0;
+  margin-bottom: 1px;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0; }
+
+.alert-full .alert-dismissible {
+  padding-right: 0; }
+
+.alert-full .alert-dismissible > .container {
+  padding-right: 45px; }
+
+.alert-full .alert-dismissible > .close {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -15px; }
+
+/*
+Error Alert
+
+Some frameworks generate error flash messages with `error` modifier. This makes them look just like original
+Bootstrap’s `.alert-danger`.
+
+Markup:
+<div class="alert alert-error alert-dismissible fade in">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <span class="glyphicon glyphicon-warning-sign mr-1" aria-hidden="true"></span>
+    What a mistake!
+</div>
+
+Styleguide 3.3.1.2
+*/
+/*
 Boxes
 
 Markup:
-<div class="box">This is box.</div>
+<div class="box">This box has maximum width.</div>
 
-Styleguide 3.1
+Styleguide 3.3.2
 */
 .box {
-  background: #bada55; }
+  max-width: 22em; }
+
+/*
+Buttons
+
+Styleguide 3.3.3
+*/
+/*
+Additional Button Variants
+
+Cast some shadow below buttons.
+
+Markup:
+<button type="button" class="btn btn-accent">Accent button</button>
+<button type="button" class="btn btn-transparent">Transparent button</button>
+
+Styleguide 3.3.3.1
+*/
+.btn-accent {
+  color: #212529;
+  background-color: #fff;
+  border-color: #fa4616; }
+  .btn-accent:hover {
+    color: #fff;
+    background-color: #fa4616;
+    border-color: #d83105; }
+  .btn-accent:focus, .btn-accent.focus {
+    box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.5); }
+  .btn-accent.disabled, .btn-accent:disabled {
+    color: #212529;
+    background-color: #fff;
+    border-color: #fa4616; }
+  .btn-accent:not(:disabled):not(.disabled):active, .btn-accent:not(:disabled):not(.disabled).active,
+  .show > .btn-accent.dropdown-toggle {
+    color: #212529;
+    background-color: #e6e6e6;
+    border-color: #cc2e04; }
+    .btn-accent:not(:disabled):not(.disabled):active:focus, .btn-accent:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-accent.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(250, 70, 22, 0.5); }
+
+.btn-transparent {
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff; }
+  .btn-transparent:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: #e6e6e6; }
+  .btn-transparent:focus, .btn-transparent.focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5); }
+  .btn-transparent.disabled, .btn-transparent:disabled {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff; }
+  .btn-transparent:not(:disabled):not(.disabled):active, .btn-transparent:not(:disabled):not(.disabled).active,
+  .show > .btn-transparent.dropdown-toggle {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: #dfdfdf; }
+    .btn-transparent:not(:disabled):not(.disabled):active:focus, .btn-transparent:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-transparent.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5); }
+
+/*
+Raised Buttons
+
+Cast some shadow below buttons.
+
+Markup:
+<button type="button" class="btn btn-default btn-raised">Raised default button</button>
+<button type="button" class="btn btn-primary btn-raised">Raised primary button</button>
+<button type="button" class="btn btn-accent btn-raised">Raised accent button</button>
+<button type="button" class="btn btn-success btn-raised">Raised success button</button>
+<button type="button" class="btn btn-info btn-raised">Raised info button</button>
+<button type="button" class="btn btn-warning btn-raised">Raised warning button</button>
+<button type="button" class="btn btn-danger btn-raised">Raised danger button</button>
+
+Styleguide 3.3.3.2
+*/
+.btn, .item-action {
+  transition: all 150ms linear; }
+
+.btn-raised {
+  border: 0; }
+  .btn-raised, .btn-raised:active, .btn-raised.active {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+
+/*
+Responsive Buttons
+
+Expanded on small screens, auto size on the rest.
+
+Markup:
+<button type="button" class="btn btn-default btn-responsive">Responsive default button</button>
+<button type="button" class="btn btn-primary btn-responsive">Responsive primary button</button>
+
+Styleguide 3.3.3.3
+*/
+.btn-responsive {
+  display: block;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .btn-responsive {
+      display: inline-block;
+      width: auto; } }
+
+/*
+Cards
+
+Extends [Bootstrap cards](https://getbootstrap.com/docs/4.0/components/card/) with rich header containing icon shortcut
+(dropdown can also be used).
+
+Markup:
+<div class="card" style="width: 18rem;">
+    <div class="card-header card-header-extended">
+        <a href="#" class="card-action" title="Settings">
+            <span class="glyphicon glyphicon-cog mr-1" aria-hidden="true"></span>
+        </a>
+        <a href="#">
+            <h4 class="card-title card-title-big">Big Big Title</h4>
+            <h5 class="card-title card-title-subtitle">Teeny Tiny Subtitle</h5>
+        </a>
+    </div>
+</div>
+
+Styleguide 3.3.4
+*/
+.card-header-extended {
+  position: relative;
+  padding: 1.5rem 1.5rem; }
+
+.card-action {
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  color: #212529; }
+
+.card-title-big {
+  margin-bottom: 0.25rem;
+  font-size: 1.75rem;
+  text-align: center; }
+
+.card-title-subtitle {
+  font-weight: 400;
+  font-size: 1em;
+  text-align: center; }
+
+/*
+Icons
+
+Nicer icon placement.
+
+Markup:
+<span class="glyphicon glyphicon-wrench icon-shift-down" aria-hidden="true"></span>
+The icon is vertically aligned on the line.
+
+Styleguide 3.3.5
+*/
+.icon-shift-down {
+  position: relative;
+  top: 1em / 8; }
+
+/*
+Figures & Images
+
+Extends [Bootstrap figure](https://getbootstrap.com/docs/4.0/content/figures/) with fixed-image-height modification
+which is perfect for media grid listing.
+
+Markup:
+<div class="row">
+    <div class="col-xs-6 col-sm-4">
+        <figure class="figure figure-fixed">
+            <a href="#">
+                <img
+                    src="http://satyr.io/300x300"
+                    class="figure-img img-fluid rounded"
+                    alt="A generic square placeholder image with rounded corners in a figure."
+                >
+                <figcaption class="figure-caption">
+                    <h4 class="figure-title">my-darling.jpg</h4>
+                    <small class="text-muted">6378&nbsp;kB</small>
+                </figcaption>
+            </a>
+            <div class="figure-actions">
+                <button type="button" class="item-action item-action-danger">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+            </div>
+        </figure>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+        <figure class="figure figure-fixed">
+            <a href="#">
+                <img
+                    src="http://satyr.io/300x300"
+                    class="figure-img img-fluid rounded"
+                    alt="A generic square placeholder image with rounded corners in a figure."
+                >
+                <figcaption class="figure-caption">
+                    <h4 class="figure-title">my-lovely-darling-with-a-long-name.jpg</h4>
+                    <small class="text-muted">6378&nbsp;kB</small>
+                </figcaption>
+            </a>
+            <div class="figure-actions">
+                <button type="button" class="item-action item-action-danger">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+            </div>
+        </figure>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+        <figure class="figure figure-fixed">
+            <a href="#">
+                <img
+                    src="http://satyr.io/300x300"
+                    class="figure-img img-fluid rounded"
+                    alt="A generic square placeholder image with rounded corners in a figure."
+                >
+                <figcaption class="figure-caption">
+                    <h4 class="figure-title">my-darling.jpg</h4>
+                    <small class="text-muted">6378&nbsp;kB</small>
+                </figcaption>
+            </a>
+            <div class="figure-actions">
+                <button type="button" class="item-action item-action-danger">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+            </div>
+        </figure>
+    </div>
+</div><!-- .row -->
+
+Styleguide 3.3.6
+*/
+.figure-fixed {
+  position: relative; }
+
+.figure-fixed a {
+  text-decoration: none; }
+
+.figure-fixed .figure-img {
+  height: 150px;
+  overflow: hidden;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #e9ecef; }
+
+.figure-fixed .figure-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1rem;
+  line-height: 1.5; }
+
+.figure-fixed .figure-actions {
+  position: absolute;
+  right: 0.25rem;
+  bottom: 0.25rem; }
+
+.figure-fixed .figure-actions form {
+  display: inline; }
+
+/*
+Item Actions
+
+Item actions extend [Bootstrap button](https://getbootstrap.com/docs/4.0/components/buttons/) component.
+They are optimized for long lists of items where each item offers one or more actions to be taken.
+They look the best when used only with icons.
+
+Markup:
+<p>
+    <a href="#" class="item-action" title="Edit">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+    </a>
+    <a href="#" class="item-action item-action-danger" title="Delete">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+    </a>
+    <a href="#" class="item-action">
+        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+        Share
+    </a>
+    <a href="#" class="item-action item-action-danger">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+        Remove
+    </a>
+</p>
+<p><strong>Used in table:</strong></p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Article</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hotforwords Can Explain Lorem Ipsum far better than I can</td>
+                <td class="table-cell-actions">
+                    <a href="#" class="item-action" title="Edit">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </a>
+                    <a href="#" class="item-action item-action-danger" title="Delete">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Which to isn't lesser together years land heaven brought</td>
+                <td class="table-cell-actions">
+                    <a href="#" class="item-action" title="Edit">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </a>
+                    <a href="#" class="item-action item-action-danger" title="Delete">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+Styleguide 3.3.7
+*/
+.item-action {
+  color: #343a40;
+  background: transparent; }
+  .item-action:hover, .item-action:focus {
+    color: #343a40;
+    border-color: #adb5bd;
+    background-color: #e9ecef; }
+
+.item-action-danger:hover, .item-action-danger:focus {
+  color: #fff;
+  border-color: #9f1c28;
+  background-color: #c62232; }
+
+/*
+Tables
+
+Default [Bootstrap tables](http://getbootstrap.com/css/#tables) can be extended with the following features:
+
+- Disabled row for inactive items
+- Nested items to present hierarchy
+- ID column that preserves its width
+- Actions column which always keeps all actions in a single row
+- Table cells vertically aligned to top (`.table-cell-top`)
+
+This is the recommended setup for simple table listing:
+
+Markup:
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="table-cell-id">#</th>
+                <th>Page Title</th>
+                <th class="text-right">Time Created</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="table-cell-id">1</td>
+                <td><a href="#">Hotforwords Can Explain Lorem Ipsum far better than I can</a></td>
+                <td class="text-right text-nowrap">
+                   <small>06/09/2015 18:05</small>
+                </td>
+                <td class="table-cell-actions">
+                    <a href="#" class="item-action" title="Edit">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </a>
+                    <a href="#" class="item-action item-action-danger" title="Delete">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr class="table-row-nested">
+                <td class="table-cell-id">2</td>
+                <td><a href="#">A nested item; Which to isn’t lesser together</a></td>
+                <td class="text-right text-nowrap">
+                    <small>06/03/2015 12:55</small>
+                </td>
+                <td class="table-cell-actions">
+                    <a href="#" class="item-action" title="Edit">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </a>
+                    <a href="#" class="item-action item-action-danger" title="Delete">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-cell-id">3</td>
+                <td><a href="#">Seas spirit morning, fill seasons every I wherein kind</a></td>
+                <td class="text-right text-nowrap">
+                    <small>06/03/2015 12:45</small>
+                </td>
+                <td class="table-cell-actions">
+                    <a href="#" class="item-action" title="Edit">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </a>
+                    <a href="#" class="item-action item-action-danger" title="Delete">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr class="disabled">
+                <td class="table-cell-id">4</td>
+                <td><a href="#">A disabled item, eg. for unpublished articles</a></td>
+                <td class="text-right text-nowrap">
+                    <small>06/03/2015 10:02</small>
+                </td>
+                <td class="table-cell-actions">
+                    <a href="#" class="item-action" title="Edit">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </a>
+                    <a href="#" class="item-action item-action-danger" title="Delete">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-cell-id">5</td>
+                <td><a href="#">Cattle she’d of herb third</a></td>
+                <td class="text-right text-nowrap">
+                    <small>06/02/2015 12:15</small>
+                </td>
+                <td class="table-cell-actions">
+                    <a href="#" class="item-action" title="Edit">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </a>
+                    <a href="#" class="item-action item-action-danger" title="Delete">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+Styleguide 3.3.8
+*/
+/*
+Tables with Groups
+
+Table data can be easily organized in groups.
+
+Markup:
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="table-cell-id">#</th>
+                <th>User</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr class="active">
+                <th colspan="2">B</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="table-cell-id">1</td>
+                <td><a href="#"><strong>Brown</strong>, James</a></td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th colspan="2">P</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="table-cell-id">2</td>
+                <td><a href="#"><strong>Paisley</strong>, Brad</a></td>
+            </tr>
+            <tr>
+                <td class="table-cell-id">3</td>
+                <td><a href="#"><strong>Parker</strong>, Maceo</a></td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr class="active">
+                <th colspan="2">W</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="table-cell-id">4</td>
+                <td><a href="#"><strong>Wesley</strong>, Fred</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+Styleguide 3.3.8.1
+*/
+tr.disabled {
+  opacity: 0.5; }
+  tr.disabled:hover {
+    opacity: 1; }
+
+.table thead h2,
+.table thead .h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0.1em; }
+
+.table tbody > tr > td {
+  vertical-align: middle; }
+
+.table-row-nested > td:nth-child(2) {
+  padding-left: 2em; }
+
+.table-cell-id {
+  width: 4em; }
+
+td.table-cell-id {
+  color: #f4f5f6; }
+
+.table-cell-actions {
+  text-align: right;
+  white-space: nowrap; }
+
+.table-cell-top {
+  vertical-align: top !important; }
+
+/*
+Tables with Dropdowns
+
+Prevent clipped dropdown menus in responsive tables.
+
+Markup:
+<div class="table-responsive table-responsive-dropdowns">
+    <table class="table">
+        <tbody>
+            <tr>
+                <td class="table-cell-id">ID 1</td>
+                <td>2016-06-30 11:30:22</td>
+                <td>John Doe</td>
+                <td class="text-right">49 USD</td>
+                <td class="table-cell-actions">
+                    <div class="btn-group">
+                        <button
+                            class="item-action"
+                            type="button"
+                            id="itemOptions1"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="itemOptions1">
+                            <li>
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-usd offset-right" aria-hidden="true"></span>
+                                    Mark as paid
+                                </a>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-dropdown">
+                                    <span
+                                        class="glyphicon glyphicon-remove-sign offset-right"
+                                        aria-hidden="true"
+                                    ></span>
+                                    Cancel order
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+Styleguide 3.3.8.2
+*/
+@media (max-width: 991.98px) {
+  .table-responsive-dropdowns {
+    overflow-y: auto; } }
+
+@media (min-width: 768px) {
+  .table-responsive-dropdowns {
+    overflow: visible; } }
+
+/*
+Back Link
+
+Link back to previous page. Typically used together with `<h2>` headings.
+
+<div class="card card-info">
+    <div class="card-heading"><h4 class="card-title">Heads Up!</h4></div>
+    <div class="card-body">
+        It may be a little bit confusing to distinguish between the Back Link and More Link components. They both
+        appear on the right side of the heading on big screens, but they are designed in a different way for mobiles.
+    </div>
+</div>
+
+Markup:
+<a href="#" class="back">Back</a>
+<h2>Upon He Was the Divided</h2>
+
+Styleguide 3.1.1
+*/
+.back {
+  display: block;
+  margin-bottom: 1.5; }
+  .back::before {
+    content: "‹ "; }
+  @media (min-width: 576px) {
+    .back {
+      float: right;
+      padding-top: 0.9rem;
+      margin-left: 1.5rem; } }
+
+@media (min-width: 576px) {
+  .back + form {
+    clear: right; } }
+
+/*
+List Group
+
+Extends [Bootstrap list group](https://getbootstrap.com/docs/4.0/components/list-group/)
+with nesting and quick add link. Works best as sidebar navigation.
+
+Markup:
+<ul class="list-group list-group-nested">
+    <li class="list-group-item active">
+        <a href="#"><h4 class="list-group-item-heading">Pages</h4></a>
+    </li>
+    <li class="list-group-item list-group-add">
+        <a href="#" title="Create new item">
+            <span class="glyphicon glyphicon-plus-sign mr-2" aria-hidden="true"></span>
+        </a>
+    </li>
+    <li class="list-group-item list-group-item-nested">
+        <a href="#">Home</a>
+    </li>
+    <li class="list-group-item list-group-item-nested">
+        <a href="#">Products</a>
+    </li>
+    <li class="list-group-item list-group-item-nested">
+        <a href="#">About</a>
+    </li>
+    <li class="list-group-item">
+        <a href="#"><h4 class="list-group-item-heading">Articles</h4></a>
+    </li>
+    <li class="list-group-item list-group-add">
+        <a href="#" title="Create new item">
+            <span class="glyphicon glyphicon-plus-sign mr-2" aria-hidden="true"></span>
+        </a>
+    </li>
+    <li class="list-group-item">
+        <a href="#"><h4 class="list-group-item-heading">Settings</h4></a>
+    </li>
+</ul>
+
+Styleguide 3.1.3
+*/
+.list-group-nested .list-group-item-heading {
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 1em; }
+
+.list-group-nested .list-group-item-nested {
+  padding-left: 3rem; }
+
+.list-group-add {
+  position: relative;
+  top: -35px;
+  right: 0;
+  z-index: 2;
+  float: right;
+  padding: 10px 15px;
+  line-height: 17px;
+  color: #00778b; }
+  .list-group-add:hover, .list-group-add:focus {
+    color: #212529; }
+
+.active + .list-group-add {
+  color: #fff; }
+
+/*
+More Link
+
+Responsive link to a complete listing. Works best with H2.
+
+By default, more link is aligned to baseline with the element that has space of one line between itself
+and the following content. The value corresponds to default bottom margin of H2 (which is one line)
+and can be adjusted via LESS variable `$more-link-top-offset`.
+
+<div class="card card-info">
+    <div class="card-heading"><h4 class="card-title">Heads Up!</h4></div>
+    <div class="card-body">
+        It may be a little bit confusing to distinguish between the Back Link and More Link components.
+        They both appear on the right side of the heading on big screens, but they are designed
+        in a different way for mobiles.
+    </div>
+</div>
+
+Markup:
+<h2>News</h2>
+<div class="has-more">
+    <p>This is the news.</p>
+    <div class="more">
+        <a href="#">All News</a>
+    </div>
+</div>
+
+Styleguide 3.1.4
+*/
+.more > a::after {
+  content: " ›"; }
+
+@media (min-width: 768px) {
+  .more {
+    position: absolute;
+    top: -3;
+    right: 0; }
+  .has-more {
+    position: relative; } }
+
+/*
+Navbar
+
+Implements default [Bootstrap navbar](http://getbootstrap.com/components/#navbar) component with minor enhancements
+(eg. `.navbar-primary` modification or `.navbar-icon` for icon items).
+
+<div class="card card-info">
+<div class="card-heading"><h4 class="card-title">Fixed navbar</h4></div>
+<div class="card-body">
+    Add `.has-navbar-fixed-top` class to `<body>` when using `.navbar-fixed-top` modification to ensure the content
+    does not hide below navbar.
+</div>
+</div>
+
+Markup:
+<!-- Main navigation -->
+<nav class="navbar navbar-expand-md navbar-primary">
+    <div class="container">
+        <!-- Brand and menu toggle -->
+        <a href="#" class="navbar-brand mr-4" title="Bootstrap UI">Bootstrap UI</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse" data-target="#kssMenu"
+            aria-controls="kssMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="sr-only">Menu</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible menu -->
+        <div class="collapse navbar-collapse" id="kssMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="#">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Media</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item navbar-icon">
+                    <a class="nav-link" href="#" target="_blank" title="Open site in a new tab">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true">H</span>
+                        <span class="d-sm-none">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item navbar-icon">
+                    <a class="nav-link" href="#" title="Settings">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true">S</span>
+                        <span class="d-sm-none">Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item navbar-icon dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="My profile">
+                        <span class="glyphicon glyphicon-user mr-2" aria-hidden="true"></span>
+                        <span class="d-sm-none mr-2">My Profile</span>
+                        <span class="glyphicon glyphicon-menu-down" aria-hidden="true">P</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">James Brown</li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a href="#" class="dropdown-item">
+                                <span
+                                    class="
+                                        glyphicon
+                                        glyphicon-user
+                                        mr-2
+                                        icon-shift-down
+                                    "
+                                    aria-hidden="true"
+                                ></span>
+                                My Account
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-item">
+                                <span
+                                    class="
+                                        glyphicon
+                                        glyphicon-off
+                                        mr-2
+                                        icon-shift-down
+                                    "
+                                    aria-hidden="true"
+                                ></span>
+                                Sign out
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- .dropdown -->
+             </ul><!-- .nav -->
+        </div><!-- .collapsible -->
+    </div><!-- .container -->
+</nav>
+
+Styleguide 3.1.5
+*/
+.navbar-toggle {
+  margin-right: calc(0 - 10px); }
+
+@media (max-width: 767.98px) {
+  .navbar .dropdown-header {
+    color: #fff; }
+  .navbar .visible-xs {
+    display: inline-block !important; }
+  .navbar-icon .glyphicon {
+    margin-right: .75ex; } }
+
+@media (min-width: 576px) {
+  .navbar .navbar-icon > .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    min-height: 2.875rem; } }
+
+.navbar-fixed-top {
+  margin-bottom: 0;
+  border-bottom: none;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 0 -2px rgba(0, 0, 0, 0.2), 0 1px 5px 1px rgba(0, 0, 0, 0.3); }
+
+.has-navbar-fixed-top {
+  padding-top: 2.875rem; }
+
+.navbar-primary {
+  background-color: #00778b;
+  border-color: #004b58; }
+  .navbar-primary .navbar-brand {
+    color: #fff; }
+    .navbar-primary .navbar-brand:hover, .navbar-primary .navbar-brand:focus {
+      color: #fff;
+      background-color: transparent; }
+  .navbar-primary .navbar-text {
+    color: #fff; }
+  .navbar-primary .navbar-nav > li > a {
+    color: #fff; }
+    .navbar-primary .navbar-nav > li > a:hover, .navbar-primary .navbar-nav > li > a:focus {
+      color: #bfdde2;
+      background-color: transparent; }
+  .navbar-primary .navbar-nav > .active > a, .navbar-primary .navbar-nav > .active > a:hover, .navbar-primary .navbar-nav > .active > a:focus {
+    color: #bfdde2;
+    background-color: #004b58; }
+  .navbar-primary .navbar-nav > .disabled > a, .navbar-primary .navbar-nav > .disabled > a:hover, .navbar-primary .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent; }
+  .navbar-primary .navbar-toggle {
+    border-color: transparent; }
+    .navbar-primary .navbar-toggle:hover, .navbar-primary .navbar-toggle:focus {
+      background-color: transparent; }
+    .navbar-primary .navbar-toggle .icon-bar {
+      background-color: #fff; }
+  .navbar-primary .navbar-collapse,
+  .navbar-primary .navbar-form {
+    border-color: #004b58; }
+  .navbar-primary .navbar-nav > .open > a, .navbar-primary .navbar-nav > .open > a:hover, .navbar-primary .navbar-nav > .open > a:focus {
+    background-color: #004b58;
+    color: #bfdde2; }
+  @media (max-width: 991.98px) {
+    .navbar-primary .navbar-nav .open .dropdown-menu > li > a {
+      color: #fff; }
+      .navbar-primary .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-primary .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #bfdde2;
+        background-color: transparent; }
+    .navbar-primary .navbar-nav .open .dropdown-menu > .active > a, .navbar-primary .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-primary .navbar-nav .open .dropdown-menu > .active > a:focus {
+      color: #bfdde2;
+      background-color: #004b58; }
+    .navbar-primary .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-primary .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-primary .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+      color: #ccc;
+      background-color: transparent; } }
+  .navbar-primary .nav-link {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #fff; }
+    .navbar-primary .nav-link:hover {
+      color: #bfdde2; }
+  .navbar-primary .btn-link {
+    color: #fff; }
+    .navbar-primary .btn-link:hover, .navbar-primary .btn-link:focus {
+      color: #bfdde2; }
+    .navbar-primary .btn-link[disabled]:hover, .navbar-primary .btn-link[disabled]:focus,
+    fieldset[disabled] .navbar-primary .btn-link:hover,
+    fieldset[disabled] .navbar-primary .btn-link:focus {
+      color: #ccc; }
+
+/*
+Letter Navigation
+
+Letter navigation is made for use with long listings.
+
+Markup:
+<div class="row flex-sm-row-reverse">
+    <div class="col-sm-2">
+        <ul class="nav nav-letters">
+            <li><a href="#letter-a">A</a></li>
+            <li><a href="#letter-b">B</a></li>
+            <li><a href="#letter-c">C</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-10">
+        <h3 id="letter-a">A</h3>
+        <p>A very long listing…</p>
+        <h3 id="letter-b">B</h3>
+        <p>Another very long listing…</p>
+        <h3 id="letter-c">C</h3>
+        <p>Yet another very long listing…</p>
+    </div>
+</div><!-- .row -->
+
+Styleguide 3.1.2
+*/
+.nav-letters {
+  text-align: center; }
+  @media (min-width: 576px) {
+    .nav-letters {
+      flex-direction: column; } }
+
+.nav-letters > li > a {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-decoration: none; }
+  .nav-letters > li > a:hover, .nav-letters > li > a:focus {
+    background-color: #e9ecef; }
+
+@media (min-width: 576px) {
+  .nav-letters > li,
+  .nav-letters > li > a {
+    display: block; } }
 
 /*# sourceMappingURL=bootstrap-ui.css.map */

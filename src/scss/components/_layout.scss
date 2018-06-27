@@ -1,0 +1,49 @@
+/*
+Layout
+
+[Bootstrap grid](https://getbootstrap.com/docs/4.0/layout/grid/#mixins) is used.
+For easier development, there are `.content` and `.sidebar` shortcuts for the most common layout components
+so you do not have to remember the exact classes (`.col-md-9` and `.col-md-3`).
+
+Markup:
+<p><strong>Right sidebar:</strong></p>
+<div class="row">
+    <div class="content">
+        <p class="kss__example-box">This is the content.</p>
+    </div>
+    <div class="sidebar">
+        <p class="kss__example-box">And I am sidebar!</p>
+    </div>
+</div><!-- .row -->
+<p><strong>Left sidebar:</strong></p>
+<div class="row">
+    <div class="sidebar">
+        <p class="kss__example-box">I am sidebar!</p>
+    </div>
+    <div class="content">
+        <p class="kss__example-box">This is the content.</p>
+    </div>
+</div><!-- .row -->
+<p><strong>Reverse column order:</strong></p>
+<div class="row flex-md-row-reverse">
+    <div class="sidebar">
+        <p class="kss__example-box">I am sidebar that is (on the) right and goes mobile first!</p>
+    </div>
+    <div class="content">
+        <p class="kss__example-box">This is the content.</p>
+    </div>
+</div><!-- .row -->
+
+Styleguide 1.2
+*/
+
+// Grid shortcuts
+.content {
+    @include make-col-ready;
+    @include make-col(9);
+}
+
+.sidebar {
+    @include make-col-ready;
+    @include make-col(3);
+}

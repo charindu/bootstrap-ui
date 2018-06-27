@@ -1,2 +1,72 @@
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import 'components/box';
+//// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "components/mixins";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "components/variables";
+
+//// Bootstrap UI
+//
+//
+//// External Dependencies
+//// =====================
+
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+//
+//// Select2
+//@import (inline) "@{external-components-path}select2/select2.css";
+//@import "@{external-components-path}select2-bootstrap-css/lib/select2-bootstrap";
+//
+//// Datetimepicker
+//@import "@{external-components-path}eonasdan-bootstrap-datetimepicker/src/less/_bootstrap-datetimepicker";
+//
+//
+//// Bootstrap UI
+//// ===========
+
+// Typography
+@import "components/typography";
+@import "components/colors";
+@import "components/articles";
+@import "components/teaser";
+@import "components/text";
+
+// Layout
+@import "components/footer";
+@import "components/layout";
+@import "components/sections";
+@import "components/site";
+
+// Forms
+@import "components/forms";
+@import "components/input-groups";
+//@import "components/datetimepicker";
+//@import "components/listbox";
+
+// Common
+@import "components/alerts";
+@import "components/boxes";
+@import "components/buttons";
+@import "components/cards";
+@import "components/icons";
+@import "components/images";
+@import "components/item-actions";
+@import "components/tables";
+
+// Navigation
+@import "components/back";
+@import "components/list-group";
+@import "components/more";
+@import "components/navbar";
+//@import "components/nav-tabs";
+@import "components/nav-letters";
+
+//// JavaScript
+//@import "components/javascript/ckeditor-loader";
+//@import "components/javascript/confirmation";
+//@import "components/javascript/datetimepicker-loader";
+//@import "components/javascript/disable";
+//@import "components/javascript/filterable";
+//@import "components/javascript/select2-loader";
+//@import "components/javascript/slugger";
+//@import "components/javascript/sortable-table";

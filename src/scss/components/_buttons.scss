@@ -1,0 +1,85 @@
+/*
+Buttons
+
+Styleguide 3.3.3
+*/
+
+/*
+Additional Button Variants
+
+Cast some shadow below buttons.
+
+Markup:
+<button type="button" class="btn btn-accent">Accent button</button>
+<button type="button" class="btn btn-transparent">Transparent button</button>
+
+Styleguide 3.3.3.1
+*/
+
+.btn-accent {
+    @include button-variant($btn-accent-color, $btn-accent-bg, $btn-accent-border);
+}
+
+.btn-transparent {
+    @include button-variant($btn-transparent-bg, $btn-transparent-border);
+}
+
+/*
+Raised Buttons
+
+Cast some shadow below buttons.
+
+Markup:
+<button type="button" class="btn btn-default btn-raised">Raised default button</button>
+<button type="button" class="btn btn-primary btn-raised">Raised primary button</button>
+<button type="button" class="btn btn-accent btn-raised">Raised accent button</button>
+<button type="button" class="btn btn-success btn-raised">Raised success button</button>
+<button type="button" class="btn btn-info btn-raised">Raised info button</button>
+<button type="button" class="btn btn-warning btn-raised">Raised warning button</button>
+<button type="button" class="btn btn-danger btn-raised">Raised danger button</button>
+
+Styleguide 3.3.3.2
+*/
+
+//stylelint-disable declaration-property-value-blacklist
+.btn {
+    transition: all 150ms linear;
+}
+//stylelint-enable
+
+//stylelint-disable selector-nested-pattern
+.btn-raised {
+    border: 0;
+
+    &,
+    &:active,
+    &.active {
+        box-shadow:
+            0 2px 2px 0 rgba(#000, 0.14),
+            0 3px 1px -2px rgba(#000, 0.2),
+            0 1px 5px 0 rgba(#000, 0.12);
+    }
+}
+//stylelint-enable
+
+/*
+Responsive Buttons
+
+Expanded on small screens, auto size on the rest.
+
+Markup:
+<button type="button" class="btn btn-default btn-responsive">Responsive default button</button>
+<button type="button" class="btn btn-primary btn-responsive">Responsive primary button</button>
+
+Styleguide 3.3.3.3
+*/
+
+.btn-responsive {
+    display: block;
+    width: 100%;
+
+    @include media-breakpoint-up($grid-float-breakpoint) {
+        display: inline-block;
+        width: auto;
+    }
+}

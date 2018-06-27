@@ -1,0 +1,287 @@
+/*
+Navbar
+
+Implements default [Bootstrap navbar](http://getbootstrap.com/components/#navbar) component with minor enhancements
+(eg. `.navbar-primary` modification or `.navbar-icon` for icon items).
+
+<div class="card card-info">
+<div class="card-heading"><h4 class="card-title">Fixed navbar</h4></div>
+<div class="card-body">
+    Add `.has-navbar-fixed-top` class to `<body>` when using `.navbar-fixed-top` modification to ensure the content
+    does not hide below navbar.
+</div>
+</div>
+
+Markup:
+<!-- Main navigation -->
+<nav class="navbar navbar-expand-md navbar-primary">
+    <div class="container">
+        <!-- Brand and menu toggle -->
+        <a href="#" class="navbar-brand mr-4" title="Bootstrap UI">Bootstrap UI</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse" data-target="#kssMenu"
+            aria-controls="kssMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="sr-only">Menu</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible menu -->
+        <div class="collapse navbar-collapse" id="kssMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="#">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Media</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item navbar-icon">
+                    <a class="nav-link" href="#" target="_blank" title="Open site in a new tab">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true">H</span>
+                        <span class="d-sm-none">Home</span>
+                    </a>
+                </li>
+                <li class="nav-item navbar-icon">
+                    <a class="nav-link" href="#" title="Settings">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true">S</span>
+                        <span class="d-sm-none">Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item navbar-icon dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="My profile">
+                        <span class="glyphicon glyphicon-user mr-2" aria-hidden="true"></span>
+                        <span class="d-sm-none mr-2">My Profile</span>
+                        <span class="glyphicon glyphicon-menu-down" aria-hidden="true">P</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">James Brown</li>
+                        <li class="dropdown-divider"></li>
+                        <li>
+                            <a href="#" class="dropdown-item">
+                                <span
+                                    class="
+                                        glyphicon
+                                        glyphicon-user
+                                        mr-2
+                                        icon-shift-down
+                                    "
+                                    aria-hidden="true"
+                                ></span>
+                                My Account
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-item">
+                                <span
+                                    class="
+                                        glyphicon
+                                        glyphicon-off
+                                        mr-2
+                                        icon-shift-down
+                                    "
+                                    aria-hidden="true"
+                                ></span>
+                                Sign out
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- .dropdown -->
+             </ul><!-- .nav -->
+        </div><!-- .collapsible -->
+    </div><!-- .container -->
+</nav>
+
+Styleguide 3.1.5
+*/
+
+//stylelint-disable all
+.navbar {
+    &-toggle {
+        margin-right: calc(#{$navbar-padding-y} - 10px);
+    }
+
+    @include media-breakpoint-down(sm) {
+        .dropdown-header {
+            color: #fff;
+        }
+
+        .visible-xs {
+            display: inline-block !important;
+        }
+
+        &-icon .glyphicon {
+            margin-right: .75ex;
+        }
+    }
+}
+
+.navbar .navbar-icon > .nav-link {
+    @include media-breakpoint-up(sm) {
+        padding-right: $navbar-icon-link-padding-x;
+        padding-left: $navbar-icon-link-padding-x;
+        min-height: $navbar-brand-height;
+    }
+}
+
+// Fixed navbar
+.navbar-fixed-top {
+    @extend .fixed-top;
+    margin-bottom: 0;
+    border-bottom: none;
+    box-shadow:
+        0 6px 10px 0 rgba(#000, 0.2),
+        0 1px 0 -2px rgba(#000, 0.2),
+        0 1px 5px 1px rgba(#000, 0.3);
+}
+
+// Make place for fixed navbar
+.has-navbar-fixed-top {
+    padding-top: $navbar-brand-height;
+}
+
+// Primary navbar
+.navbar-primary {
+    background-color: $navbar-primary-bg;
+    border-color: $navbar-primary-border;
+
+    .navbar-brand {
+        color: $navbar-primary-brand-color;
+
+        &:hover,
+        &:focus {
+            color: $navbar-primary-brand-hover-color;
+            background-color: $navbar-primary-brand-hover-bg;
+        }
+    }
+
+    .navbar-text {
+        color: $navbar-primary-color;
+    }
+
+    .navbar-nav {
+        > li > a {
+            color: $navbar-primary-link-color;
+
+            &:hover,
+            &:focus {
+                color: $navbar-primary-link-hover-color;
+                background-color: $navbar-primary-link-hover-bg;
+            }
+        }
+
+        > .active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: $navbar-primary-link-active-color;
+                background-color: $navbar-primary-link-active-bg;
+            }
+        }
+
+        > .disabled > a {
+            &,
+            &:hover,
+            &:focus {
+                color: $navbar-primary-link-disabled-color;
+                background-color: $navbar-primary-link-disabled-bg;
+            }
+        }
+    }
+
+    .navbar-toggle {
+        border-color: $navbar-primary-toggle-border-color;
+
+        &:hover,
+        &:focus {
+            background-color: $navbar-primary-toggle-hover-bg;
+        }
+
+        .icon-bar {
+            background-color: $navbar-primary-toggle-icon-bar-bg;
+        }
+    }
+
+    .navbar-collapse,
+    .navbar-form {
+        border-color: $navbar-primary-border;
+    }
+
+    // Dropdown menu items
+    .navbar-nav {
+        // Remove background color from open dropdown
+        > .open > a {
+            &,
+            &:hover,
+            &:focus {
+                background-color: $navbar-primary-link-active-bg;
+                color: $navbar-primary-link-active-color;
+            }
+        }
+
+        @include media-breakpoint-down($grid-float-breakpoint) {
+            // Dropdowns get custom display when collapsed
+            .open .dropdown-menu {
+                > li > a {
+                    color: $navbar-primary-link-color;
+
+                    &:hover,
+                    &:focus {
+                        color: $navbar-primary-link-hover-color;
+                        background-color: $navbar-primary-link-hover-bg;
+                    }
+                }
+
+                > .active > a {
+                    &,
+                    &:hover,
+                    &:focus {
+                        color: $navbar-primary-link-active-color;
+                        background-color: $navbar-primary-link-active-bg;
+                    }
+                }
+
+                > .disabled > a {
+                    &,
+                    &:hover,
+                    &:focus {
+                        color: $navbar-primary-link-disabled-color;
+                        background-color: $navbar-primary-link-disabled-bg;
+                    }
+                }
+            }
+        }
+    }
+
+    // Links in navbars
+    //
+    // Add a class to ensure links outside the navbar nav are colored correctly.
+    .nav-link {
+        padding-top: $navbar-primary-nav-link-padding-y;
+        padding-bottom: $navbar-primary-nav-link-padding-y;
+        color: $navbar-primary-link-color;
+
+        &:hover {
+            color: $navbar-primary-link-hover-color;
+        }
+    }
+
+    .btn-link {
+        color: $navbar-primary-link-color;
+
+        &:hover,
+        &:focus {
+            color: $navbar-primary-link-hover-color;
+        }
+
+        &[disabled],
+        fieldset[disabled] & {
+            &:hover,
+            &:focus {
+                color: $navbar-primary-link-disabled-color;
+            }
+        }
+    }
+}

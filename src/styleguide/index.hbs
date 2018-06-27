@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Bootstrap UI Documentation</title>
-    <meta name="description" content="Bootstrap UI is a Bootstrap 3 extension for building beautiful web apps user interfaces." />
+    <meta name="description" content="Bootstrap UI is a Bootstrap 4 extension for building beautiful web apps user interfaces." />
     <meta name="author" content="VisionApps, s.r.o. [www.visionapps.cz]" />
     <meta name="generator" content="kss" />
 
@@ -35,29 +35,37 @@
 <header role="banner" id="top" class="site-header">
 
     <!-- Main navigation -->
-    <nav class="navbar navbar-fixed-top navbar-primary">
+    <nav class="navbar navbar-expand-md navbar-fixed-top navbar-primary">
         <div class="container">
 
             <!-- Brand and menu toggle -->
+            <a href="index.html" class="navbar-brand mr-4" title="Bootstrap UI">
+                <span class="d-md-block d-none">Bootstrap UI</span>
+                <span class="d-md-none" aria-hidden="true">BUI</span>
+            </a>
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#menu"
+                    aria-controls="menu"
+                    aria-expanded="false"
+                    aria-label="Menu"
+                >
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <a href="index.html" class="navbar-brand offset-right-large" title="Bootstrap UI">
-                    <span class="hidden-sm">Bootstrap UI</span>
-                    <span class="visible-sm-inline" aria-hidden="true">SUI</span>
-                </a>
             </div>
 
             <!-- Collapsible menu -->
             <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav">
+                <ul class="navbar-nav mr-auto">
                     {{#each menu}}
-                        <li{{#if isActive}} class="active"{{/if}}>
-                            <a href="section-{{referenceURI}}.html" class="small text-uppercase text-letterspacing">{{header}}</a>
+                        <li{{#if isActive}} class="nav-item active"{{/if}}>
+                            <a
+                                href="section-{{referenceURI}}.html"
+                                class="nav-link small text-uppercase text-letterspacing"
+                            >{{header}}</a>
                         </li>
                     {{/each}}
                 </ul>
@@ -121,7 +129,7 @@
                     {{else}}
                         <article>
 
-                            <ul class="hidden-md hidden-lg offset-bottom-large kss__secondary-nav__list">
+                            <ul class="d-md-none offset-bottom-large kss__secondary-nav__list">
                                 {{#if homepage}}
                                 {{else}}
                                     {{#each sections}}

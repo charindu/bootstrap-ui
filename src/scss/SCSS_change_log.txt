@@ -1,0 +1,80 @@
+What's changed:
+***************
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+- Everything needs a review and fixes.
+- Not refactored: nav-tabs.less and whole javascript section.
+- Structure needs refactor - side navigation renders only 2nd level that is insufficient in Components section.
+
+TODO:
+- Think about removing common variables like $padding-large-vertical
+- It's time to refactor list-group - problem is when there is ul, li not only div and links inside.
+  It is completely broken.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+Old offsets used to be multiplication by 5.
+That means 5px offset turns into 4px (1rem * 0.25) etc. See BS4 $spacers.
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+Notes:
+******
+
+common/buttons.less
+    - btn-accent -> $theme-colors
+    - btn[disabled]
+    - btn-dropdown -> BS4 .dropdown > .btn
+
+common/gallery.less removed - flexbox can do the same job
+
+common/icons.scss
+    - must install glyphicons
+
+common/thumbnails.less -> _images.scss (BS renamed component + split into .img-thumnail and .figure)
+
+common/panels.less -> _cards.scss
+
+navigation/cta.less removed - https://getbootstrap.com/docs/4.0/components/dropdowns/
+
+navigation/more.less -> _more.scss
+    - margin top computed from line-height-computed var that no longer exists
+
+navigation/navbar.less
+    - TODO
+    - postponed
+    - icons is not included in BS4 but BS is using it for itself (.navbar-nav-svg)
+    - too compolex to refactor the code blinded
+
+navigation/nav-tabs.less
+    - TODO
+    - possibly removed
+    - alignment is solved with flexbox already
+    - transparent tabs might be kept
+
+layout/aligner.less removed - flexbox classes
+
+layout/layout.less partly removed - inverse order of columns solved by flexbox
+
+layout/offset.less removed
+
+layout/section.less
+    - TODO: check paddings of elements - it was 1.5, 2 and 3 times line-height-computed - these values don't fit to BS4 $spacers
+
+form/datepicker.less
+    - TODO
+    - postponed - waiting for javascripts to be solved
+
+form/filter.less - removed - vertical align bottom cant be done with flexbox class
+
+form/listbox.less
+    - TODO
+    - postponed - waiting for javascripts to be solved
+
+typography/colors.less
+    - removed grayscale colors
+    - kept only kss squares
+    - used BS4 color selectors from $theme-colors
+
+typography/responsive-alignment removed

@@ -1,0 +1,144 @@
+// Color system
+$visionapps-petrol: #004f59 !default;
+$visionapps-petrol-light: #006272 !default;
+$visionapps-petrol-lighter: #00778b !default;
+$visionapps-red: #fa4616 !default;
+
+$primary: $visionapps-petrol-lighter;
+$accent: $visionapps-red !default;
+
+$theme-colors: (
+    "accent": $accent
+);
+
+// Responsive
+$grid-float-breakpoint: md !default;
+
+// Typography
+$font-family-base: 'Titillium Web', helvetica, arial, sans-serif;
+$headings-font-weight: 300;
+
+$headings-color: $gray-800;
+$link-color: $primary;
+$link-hover-color: darken($primary, 10%);
+
+// Common variables
+$padding-base-vertical:     map-get($spacers, 2) !default; // was 8px
+$padding-base-horizontal:   map-get($spacers, 3) !default; // was 16px
+
+$padding-xlarge-vertical:   map-get($spacers, 4) !default; // new!
+$padding-xlarge-horizontal: map-get($spacers, 5) !default; // new!
+
+$padding-large-vertical:    map-get($spacers, 3) !default; // was 10px
+$padding-large-horizontal:  map-get($spacers, 4) !default; // was 16px
+
+$padding-small-vertical:    map-get($spacers, 2) !default; // was 5px
+$padding-small-horizontal:  map-get($spacers, 3) !default; // was 10px
+
+$padding-xs-vertical:       map-get($spacers, 1) !default; // was 1px
+$padding-xs-horizontal:     map-get($spacers, 2) !default; // was 5px
+
+$border-radius-base: 2px;
+$border-radius-small: 2px;
+$border-radius-large: 2px;
+
+// Articles
+$article-floated-image-offset-left: map-get($spacers, 4) 1.5em map-get($spacers, 4) -150px;
+$article-floated-image-offset-right: map-get($spacers, 4) -150px map-get($spacers, 4) 1.5em;
+
+// Buttons
+$btn-accent-color: $white;
+$btn-accent-bg: $accent;
+$btn-accent-border: $accent;
+
+//$btn-transparent-color: #fff;
+$btn-transparent-bg: transparent;
+$btn-transparent-border: #fff;
+
+// Figure's image
+$figure-image-height: 150px !default;
+
+// Sections
+$section-header-color: inherit;
+$section-header-bg: $gray-200;
+$section-header-border-color: $nav-tabs-border-color;
+$section-header-title-color: inherit;
+$section-header-subtitle-color: inherit;
+
+$section-primary-color: $white;
+$section-primary-bg: $primary;
+
+// List group
+$list-group-active-color: $body-bg;
+$list-group-active-bg: $primary;
+$list-group-active-border-color: $list-group-active-bg;
+
+// Footer
+$footer-text: $gray-600;
+$footer-bg: $gray-200;
+$footer-link-color: $gray-600;
+$footer-link-hover-color: $gray-700;
+$footer-divider-border: $gray-400;
+
+// Primary navbar
+$navbar-primary-nav-link-padding-y: 1rem;
+$navbar-primary-color: #fff;
+$navbar-primary-bg: $primary;
+$navbar-primary-border: darken($navbar-primary-bg, 10%);
+
+// Navbar
+$navbar-padding-y: 0;
+$navbar-nav-link-padding-x: 1rem;
+$navbar-brand-height: $navbar-brand-font-size * $line-height-base + $navbar-primary-nav-link-padding-y;
+
+// Primary navbar links
+$navbar-primary-link-color: #fff;
+$navbar-primary-link-hover-color: mix(#fff, $navbar-primary-bg, 75%);
+$navbar-primary-link-hover-bg: transparent;
+$navbar-primary-link-active-color: $navbar-primary-link-hover-color;
+$navbar-primary-link-active-bg: darken($navbar-primary-bg, 10%);
+$navbar-primary-link-disabled-color: #ccc;
+$navbar-primary-link-disabled-bg: transparent;
+
+// Navbar brand label
+$navbar-primary-brand-color: #fff;
+$navbar-primary-brand-hover-color: #fff;
+$navbar-primary-brand-hover-bg: transparent;
+
+// Primary navbar toggle
+$navbar-primary-toggle-hover-bg: transparent;
+$navbar-primary-toggle-icon-bar-bg: #fff;
+$navbar-primary-toggle-border-color: transparent;
+
+// Navbar icon link
+$navbar-icon-link-padding-x: 0.5rem !default;
+
+// Nav Letters
+$nav-letters-link-padding-y: map-get($spacers, 2) !default;
+
+//// Transparent tabs
+//$nav-tabs-transparent-border-color: #fff;
+//
+//$nav-tabs-transparent-link-color: #fff;
+//$nav-tabs-transparent-link-border-color: transparent;
+//
+//$nav-tabs-transparent-link-hover-color: #fff;
+//$nav-tabs-transparent-link-hover-bg: transparent;
+//$nav-tabs-transparent-link-hover-border-color: #fff;
+//
+//$nav-tabs-transparent-active-link-bg: transparent;
+//$nav-tabs-transparent-active-link-color: #fff;
+//$nav-tabs-transparent-active-link-border-color: #fff;
+
+// Teaser
+$teaser-title-lines: 2;
+$teaser-description-lines: 6;
+$teaser-more-decoration: ' ›';
+
+// Back link
+$back-link-decoration: '‹ ';
+
+//// More link
+$more-link-decoration: ' ›';
+$more-link-top-offset: -2 * $line-height-base;
+

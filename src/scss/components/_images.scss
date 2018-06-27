@@ -1,0 +1,109 @@
+/*
+Figures & Images
+
+Extends [Bootstrap figure](https://getbootstrap.com/docs/4.0/content/figures/) with fixed-image-height modification
+which is perfect for media grid listing.
+
+Markup:
+<div class="row">
+    <div class="col-xs-6 col-sm-4">
+        <figure class="figure figure-fixed">
+            <a href="#">
+                <img
+                    src="http://satyr.io/300x300"
+                    class="figure-img img-fluid rounded"
+                    alt="A generic square placeholder image with rounded corners in a figure."
+                >
+                <figcaption class="figure-caption">
+                    <h4 class="figure-title">my-darling.jpg</h4>
+                    <small class="text-muted">6378&nbsp;kB</small>
+                </figcaption>
+            </a>
+            <div class="figure-actions">
+                <button type="button" class="item-action item-action-danger">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+            </div>
+        </figure>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+        <figure class="figure figure-fixed">
+            <a href="#">
+                <img
+                    src="http://satyr.io/300x300"
+                    class="figure-img img-fluid rounded"
+                    alt="A generic square placeholder image with rounded corners in a figure."
+                >
+                <figcaption class="figure-caption">
+                    <h4 class="figure-title">my-lovely-darling-with-a-long-name.jpg</h4>
+                    <small class="text-muted">6378&nbsp;kB</small>
+                </figcaption>
+            </a>
+            <div class="figure-actions">
+                <button type="button" class="item-action item-action-danger">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+            </div>
+        </figure>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+        <figure class="figure figure-fixed">
+            <a href="#">
+                <img
+                    src="http://satyr.io/300x300"
+                    class="figure-img img-fluid rounded"
+                    alt="A generic square placeholder image with rounded corners in a figure."
+                >
+                <figcaption class="figure-caption">
+                    <h4 class="figure-title">my-darling.jpg</h4>
+                    <small class="text-muted">6378&nbsp;kB</small>
+                </figcaption>
+            </a>
+            <div class="figure-actions">
+                <button type="button" class="item-action item-action-danger">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+            </div>
+        </figure>
+    </div>
+</div><!-- .row -->
+
+Styleguide 3.3.6
+*/
+
+.figure-fixed {
+    position: relative;
+}
+
+.figure-fixed a {
+    text-decoration: none;
+}
+
+.figure-fixed .figure-img {
+    height: $figure-image-height;
+    overflow: hidden;
+    text-align: center;
+
+    // Add support for thumbnails as background images.
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $gray-200;
+}
+
+.figure-fixed .figure-title {
+    @include text-overflow;
+
+    font-size: $font-size-base;
+    line-height: 1.5;
+}
+
+.figure-fixed .figure-actions {
+    position: absolute;
+    right: $thumbnail-padding;
+    bottom: $thumbnail-padding;
+}
+
+.figure-fixed .figure-actions form {
+    display: inline;
+}
